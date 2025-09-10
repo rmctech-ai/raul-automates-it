@@ -13,7 +13,7 @@ const About = () => {
   ];
 
   const tools = [
-    "n8n", "Zapier", "GoHighLevel", "WordPress", "Linux", "DNS Management",
+    "n8n", "Zapier", "Make.com", "GoHighLevel", "WordPress", "Linux", "DNS Management",
     "G-Suite", "Outlook", "Webmail", "HostGator", "Domain Management", "AI Integration"
   ];
 
@@ -23,6 +23,17 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8 animate-slide-up">
+            {/* Profile Photo */}
+            <div className="flex justify-center lg:justify-start mb-8">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/ddc22428-c63a-4518-9b5e-c92ab237f29a.png" 
+                  alt="Raul M. Cachola - Virtual Assistant & Automation Specialist"
+                  className="w-48 h-48 rounded-2xl object-cover border-4 border-primary/20 shadow-lg"
+                />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </div>
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold">
                 About <span className="gradient-text">Me</span>
