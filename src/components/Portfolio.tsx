@@ -53,41 +53,55 @@ const Portfolio = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-1 gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <Card 
               key={project.title} 
-              className={`card-hover bg-gradient-to-br ${project.gradient} backdrop-blur-sm border-border/50 animate-slide-up`}
+              className="card-hover bg-card/80 backdrop-blur-sm border-border/50 animate-slide-up shadow-lg hover:shadow-xl transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardHeader>
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+              <CardHeader className="p-8">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="space-y-4 flex-1">
-                    <CardTitle className="text-2xl text-foreground">{project.title}</CardTitle>
-                    <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-                    
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <Badge 
-                          key={tag} 
-                          variant="secondary" 
-                          className="bg-primary/20 text-primary border-primary/30"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
+                    <div className="flex items-start gap-4">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
+                      <div className="space-y-4">
+                        <CardTitle className="text-2xl lg:text-3xl text-foreground leading-tight">
+                          {project.title}
+                        </CardTitle>
+                        <p className="text-muted-foreground leading-relaxed text-lg">
+                          {project.description}
+                        </p>
+                        
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag) => (
+                            <Badge 
+                              key={tag} 
+                              variant="secondary" 
+                              className="bg-primary/15 text-primary border-primary/20 px-3 py-1 font-medium"
+                            >
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   {/* Results */}
-                  <div className="lg:min-w-[300px]">
-                    <h4 className="text-lg font-semibold text-foreground mb-4">Key Results</h4>
-                    <div className="space-y-3">
+                  <div className="lg:min-w-[320px] bg-muted/30 rounded-xl p-6 border border-border/30">
+                    <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <Target className="w-5 h-5 text-primary" />
+                      Key Results
+                    </h4>
+                    <div className="space-y-4">
                       {project.results.map((result, resultIndex) => (
-                        <div key={resultIndex} className="flex items-center gap-3">
-                          <result.icon className={`w-5 h-5 ${result.color}`} />
-                          <span className="text-sm text-muted-foreground">{result.label}</span>
+                        <div key={resultIndex} className="flex items-center gap-3 p-3 bg-background/50 rounded-lg">
+                          <div className="flex-shrink-0">
+                            <result.icon className={`w-5 h-5 ${result.color}`} />
+                          </div>
+                          <span className="text-muted-foreground font-medium">{result.label}</span>
                         </div>
                       ))}
                     </div>

@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Server, Settings, Globe, Mail, Zap, Users } from "lucide-react";
+import { Server, Settings, Globe, Mail, Zap, Users, Workflow, Bot, Database, ShoppingCart, Calendar, Brain, Activity } from "lucide-react";
 
 const About = () => {
   const skills = [
@@ -13,8 +13,23 @@ const About = () => {
   ];
 
   const tools = [
-    "n8n", "Zapier", "Make.com", "GoHighLevel", "WordPress", "Linux", "DNS Management",
-    "G-Suite", "Outlook", "Webmail", "HostGator", "Domain Management", "AI Integration"
+    { name: "n8n", icon: Workflow },
+    { name: "Zapier", icon: Zap },
+    { name: "Make.com", icon: Settings },
+    { name: "GoHighLevel", icon: Activity },
+    { name: "WordPress", icon: Globe },
+    { name: "Linux", icon: Server },
+    { name: "DNS Management", icon: Server },
+    { name: "G-Suite", icon: Mail },
+    { name: "Outlook", icon: Mail },
+    { name: "Webmail", icon: Mail },
+    { name: "HubSpot", icon: Users },
+    { name: "monday.com", icon: Calendar },
+    { name: "Shopify", icon: ShoppingCart },
+    { name: "Airtable", icon: Database },
+    { name: "OpenAI", icon: Brain },
+    { name: "Domain Management", icon: Globe },
+    { name: "AI Integration", icon: Bot }
   ];
 
   return (
@@ -64,14 +79,15 @@ const About = () => {
             {/* Tools & Technologies */}
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-foreground">Tools & Technologies</h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {tools.map((tool) => (
                   <Badge 
-                    key={tool} 
+                    key={tool.name} 
                     variant="secondary" 
-                    className="bg-secondary/50 text-foreground hover:bg-primary/20 hover:text-primary transition-colors"
+                    className="bg-secondary/50 text-foreground hover:bg-primary/20 hover:text-primary transition-colors flex items-center gap-2 px-3 py-2"
                   >
-                    {tool}
+                    <tool.icon className="w-4 h-4" />
+                    {tool.name}
                   </Badge>
                 ))}
               </div>
