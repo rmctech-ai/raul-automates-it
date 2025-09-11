@@ -3,40 +3,40 @@
 @tailwind utilities;
 
 /* Professional Portfolio Design System for Raul M. Cachola
-Dark theme with cyan/blue accents inspired by modern automation interfaces
+Blue and white theme with modern automation interface styling
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Lighter purple-grayish theme base colors */
-    --background: 250 20% 96%;
-    --foreground: 250 15% 15%;
+    /* Blue and white theme base colors */
+    --background: 0 0% 100%;
+    --foreground: 220 25% 15%;
 
     /* Card and surface colors */
-    --card: 250 15% 92%;
-    --card-foreground: 250 15% 15%;
+    --card: 210 20% 98%;
+    --card-foreground: 220 25% 15%;
 
     /* Popover colors */
-    --popover: 250 15% 92%;
-    --popover-foreground: 250 15% 15%;
+    --popover: 210 20% 98%;
+    --popover-foreground: 220 25% 15%;
 
-    /* Primary brand colors - Purple automation theme */
-    --primary: 270 60% 65%;
-    --primary-foreground: 250 20% 96%;
-    --primary-glow: 270 60% 75%;
+    /* Primary brand colors - Blue theme */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 100% 60%;
 
     /* Secondary colors */
-    --secondary: 250 15% 88%;
-    --secondary-foreground: 250 15% 25%;
+    --secondary: 210 15% 90%;
+    --secondary-foreground: 220 25% 25%;
 
     /* Muted colors for subtle elements */
-    --muted: 250 15% 90%;
-    --muted-foreground: 250 10% 45%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 220 10% 45%;
 
-    /* Accent colors - Complementary lavender */
-    --accent: 290 50% 70%;
-    --accent-foreground: 250 20% 96%;
+    /* Accent colors - Light blue */
+    --accent: 200 100% 60%;
+    --accent-foreground: 0 0% 100%;
 
     /* Success and error states */
     --success: 140 50% 55%;
@@ -86,7 +86,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans antialiased;
     overflow-x: hidden;
-    background-image: url('/src/assets/ai-robot-background.jpg');
+    background-image: url('/src/assets/ai-robot-background-blue.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -109,14 +109,14 @@ All colors MUST be HSL.
 
   .custom-cursor {
     position: fixed;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: radial-gradient(circle, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.5) 50%, transparent 70%);
+    background: radial-gradient(circle, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 30%, hsl(var(--primary) / 0.3) 70%, transparent 100%);
     pointer-events: none;
     z-index: 9999;
-    mix-blend-mode: screen;
     transition: transform 0.1s ease;
+    border: 2px solid hsl(var(--primary));
   }
 
   .custom-cursor::before {
@@ -125,11 +125,11 @@ All colors MUST be HSL.
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     background: hsl(var(--primary));
     border-radius: 50%;
-    box-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
+    box-shadow: 0 0 15px hsl(var(--primary)), 0 0 25px hsl(var(--primary)), 0 0 35px hsl(var(--primary));
   }
 
   /* Smooth scrolling for anchor links */

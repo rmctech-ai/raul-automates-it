@@ -52,20 +52,20 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "raul.cachola@email.com",
-      action: () => window.open("mailto:raul.cachola@email.com"),
+      value: "rapaulskie33@gmail.com",
+      action: () => window.open("mailto:rapaulskie33@gmail.com"),
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/raulcachola",
-      action: () => window.open("https://linkedin.com/in/raulcachola", "_blank"),
+      value: "Connect with me",
+      action: () => window.open("https://www.linkedin.com/in/raulcachola/", "_blank"),
     },
     {
       icon: Facebook,
       label: "Facebook",
-      value: "facebook.com/raulcachola",
-      action: () => window.open("https://facebook.com/raulcachola", "_blank"),
+      value: "Follow me",
+      action: () => window.open("https://www.facebook.com/pgenri.cachola/", "_blank"),
     },
   ];
 
@@ -198,14 +198,18 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Working Hours */}
+            {/* Phone & Working Hours */}
             <Card className="bg-card/50 backdrop-blur-sm border-border/50">
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-primary" />
-                  <h3 className="font-semibold text-foreground">Working Hours</h3>
+                  <h3 className="font-semibold text-foreground">Contact & Hours</h3>
                 </div>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Phone</span>
+                    <span className="text-foreground">+639169819621</span>
+                  </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Monday - Friday</span>
                     <span className="text-foreground">9:00 AM - 6:00 PM (PST)</span>

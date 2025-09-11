@@ -7,6 +7,7 @@ import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ToolsCarousel from "@/components/ToolsCarousel";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -43,10 +44,11 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        <About />
-        <Portfolio />
-        <RealWorldProjects />
-        <Services />
+      <About />
+      <ToolsCarousel />
+      <Portfolio />
+      <RealWorldProjects />
+      <Services />
         <Testimonials />
         <Contact />
       </main>
