@@ -9,40 +9,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Blue and white theme base colors */
-    --background: 0 0% 100%;
-    --foreground: 220 25% 15%;
+    /* Professional Tech Color Palette */
+    --background: 210 25% 97%; /* Soft White #F5F7FA */
+    --foreground: 0 0% 20%; /* Graphite Gray #333333 */
 
     /* Card and surface colors */
-    --card: 210 20% 98%;
-    --card-foreground: 220 25% 15%;
+    --card: 210 25% 97%;
+    --card-foreground: 0 0% 20%;
 
     /* Popover colors */
-    --popover: 210 20% 98%;
-    --popover-foreground: 220 25% 15%;
+    --popover: 210 25% 97%;
+    --popover-foreground: 0 0% 20%;
 
-    /* Primary brand colors - Blue theme */
-    --primary: 210 100% 50%;
+    /* Primary brand colors - Tech Blue */
+    --primary: 210 29% 24%; /* Tech Blue #2C3E50 */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 210 100% 60%;
+    --primary-glow: 210 29% 35%;
 
     /* Secondary colors */
-    --secondary: 210 15% 90%;
-    --secondary-foreground: 220 25% 25%;
+    --secondary: 210 20% 90%;
+    --secondary-foreground: 0 0% 20%;
 
     /* Muted colors for subtle elements */
     --muted: 210 15% 95%;
-    --muted-foreground: 220 10% 45%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Accent colors - Light blue */
-    --accent: 200 100% 60%;
+    /* Accent colors - Electric Cyan */
+    --accent: 187 100% 42%; /* Electric Cyan #00BCD4 */
     --accent-foreground: 0 0% 100%;
 
     /* Success and error states */
-    --success: 140 50% 55%;
-    --success-foreground: 250 20% 96%;
+    --success: 145 63% 42%; /* Signal Green #27AE60 */
+    --success-foreground: 0 0% 100%;
     --destructive: 0 70% 60%;
-    --destructive-foreground: 250 20% 96%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Highlight color - Signal Green */
+    --highlight: 145 63% 42%; /* Signal Green #27AE60 */
+    --highlight-foreground: 0 0% 100%;
 
     /* Border and input colors */
     --border: 250 15% 85%;
@@ -86,7 +90,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans antialiased;
     overflow-x: hidden;
-    background-image: url('/src/assets/ai-robot-background-blue.jpg');
+    background-image: url('/src/assets/ai-robot-background-tech.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
