@@ -90,7 +90,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans antialiased;
     overflow-x: hidden;
-    background-image: url('/src/assets/ai-robot-background-tech.jpg');
+    background-image: url('/lovable-uploads/f5936de1-7821-4db1-b78d-5fe664cf4df9.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
