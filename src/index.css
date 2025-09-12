@@ -9,49 +9,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Professional Tech Color Palette */
-    --background: 210 25% 97%; /* Soft White #F5F7FA */
-    --foreground: 0 0% 20%; /* Graphite Gray #333333 */
+    /* Professional Tech Color Palette - Darkened */
+    --background: 210 20% 8%; /* Dark Background */
+    --foreground: 0 0% 85%; /* Light Gray Text */
 
     /* Card and surface colors */
-    --card: 210 25% 97%;
-    --card-foreground: 0 0% 20%;
+    --card: 210 25% 12%;
+    --card-foreground: 0 0% 85%;
 
     /* Popover colors */
-    --popover: 210 25% 97%;
-    --popover-foreground: 0 0% 20%;
+    --popover: 210 25% 10%;
+    --popover-foreground: 0 0% 85%;
 
-    /* Primary brand colors - Tech Blue */
-    --primary: 210 29% 24%; /* Tech Blue #2C3E50 */
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 210 29% 35%;
+    /* Primary brand colors - Darker Tech Blue */
+    --primary: 210 29% 18%; /* Darker Tech Blue */
+    --primary-foreground: 0 0% 95%;
+    --primary-glow: 210 29% 28%;
 
     /* Secondary colors */
-    --secondary: 210 20% 90%;
-    --secondary-foreground: 0 0% 20%;
+    --secondary: 210 20% 20%;
+    --secondary-foreground: 0 0% 85%;
 
     /* Muted colors for subtle elements */
-    --muted: 210 15% 95%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 15% 15%;
+    --muted-foreground: 0 0% 65%;
 
     /* Accent colors - Electric Cyan */
-    --accent: 187 100% 42%; /* Electric Cyan #00BCD4 */
+    --accent: 187 100% 35%; /* Darker Electric Cyan */
     --accent-foreground: 0 0% 100%;
 
     /* Success and error states */
-    --success: 145 63% 42%; /* Signal Green #27AE60 */
+    --success: 145 63% 35%; /* Darker Signal Green */
     --success-foreground: 0 0% 100%;
-    --destructive: 0 70% 60%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
     /* Highlight color - Signal Green */
-    --highlight: 145 63% 42%; /* Signal Green #27AE60 */
+    --highlight: 145 63% 35%; /* Darker Signal Green */
     --highlight-foreground: 0 0% 100%;
 
     /* Border and input colors */
-    --border: 250 15% 85%;
-    --input: 250 15% 88%;
-    --ring: 270 60% 65%;
+    --border: 210 15% 25%;
+    --input: 210 15% 18%;
+    --ring: 210 60% 45%;
 
     /* Design system radius */
     --radius: 0.75rem;
@@ -90,7 +90,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans antialiased;
     overflow-x: hidden;
-    background-image: url('/lovable-uploads/f5936de1-7821-4db1-b78d-5fe664cf4df9.png');
+    background-image: url('/lovable-uploads/c4b1ab89-dc5c-4fdd-b295-b2a00292426a.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
