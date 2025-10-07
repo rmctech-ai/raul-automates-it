@@ -9,51 +9,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Professional Tech Color Palette - Balanced Contrast */
-    --background: 210 20% 8%; /* Dark Background */
-    --foreground: 0 0% 75%; /* Softer Light Gray Text - Primary */
-    --foreground-secondary: 0 0% 65%; /* Secondary Text */
-    --foreground-muted: 0 0% 55%; /* Tertiary/Caption Text */
+    /* Professional Tech Color Palette - Light Theme */
+    --background: 210 30% 98%; /* Very Light Background */
+    --foreground: 210 15% 20%; /* Dark Text for Contrast */
+    --foreground-secondary: 210 10% 35%; /* Secondary Text */
+    --foreground-muted: 210 10% 50%; /* Tertiary/Caption Text */
 
     /* Card and surface colors */
-    --card: 210 25% 12%;
-    --card-foreground: 0 0% 75%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 20%;
 
     /* Popover colors */
-    --popover: 210 25% 10%;
-    --popover-foreground: 0 0% 75%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 20%;
 
     /* Primary brand colors - Tech Blue */
-    --primary: 210 29% 22%; /* Lighter Tech Blue */
-    --primary-foreground: 0 0% 95%;
-    --primary-glow: 210 29% 32%;
+    --primary: 210 80% 50%; /* Vibrant Tech Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 80% 60%;
 
     /* Secondary colors */
-    --secondary: 210 20% 18%;
-    --secondary-foreground: 0 0% 75%;
+    --secondary: 210 25% 92%;
+    --secondary-foreground: 210 15% 20%;
 
     /* Muted colors for subtle elements */
-    --muted: 210 15% 16%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 210 10% 45%;
 
     /* Accent colors - Electric Cyan */
-    --accent: 187 100% 35%; /* Darker Electric Cyan */
+    --accent: 187 85% 45%; /* Bright Electric Cyan */
     --accent-foreground: 0 0% 100%;
 
     /* Success and error states */
-    --success: 145 63% 35%; /* Darker Signal Green */
+    --success: 145 65% 45%; /* Vibrant Signal Green */
     --success-foreground: 0 0% 100%;
-    --destructive: 0 70% 50%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
     /* Highlight color - Signal Green */
-    --highlight: 145 63% 35%; /* Darker Signal Green */
+    --highlight: 145 65% 45%; /* Vibrant Signal Green */
     --highlight-foreground: 0 0% 100%;
 
     /* Border and input colors */
-    --border: 210 15% 25%;
-    --input: 210 15% 18%;
-    --ring: 210 60% 45%;
+    --border: 210 20% 85%;
+    --input: 210 20% 96%;
+    --ring: 210 80% 50%;
 
     /* Design system radius */
     --radius: 0.75rem;
@@ -61,12 +61,12 @@ All colors MUST be HSL.
     /* Professional gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(222 40% 8%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(210 30% 96%) 100%);
     
     /* Professional shadows with primary color glow */
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.2);
-    --shadow-card: 0 8px 32px hsl(var(--background) / 0.8);
-    --shadow-button: 0 4px 20px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 4px 24px hsl(210 15% 20% / 0.08);
+    --shadow-button: 0 4px 16px hsl(var(--primary) / 0.2);
 
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
