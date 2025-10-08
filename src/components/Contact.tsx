@@ -227,9 +227,15 @@ const Contact = () => {
               variant="outline" 
               className="w-full btn-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/AI_RESUME.pdf';
+                link.download = 'Raul_Cachola_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
                 toast({
-                  title: "Resume will be available soon",
-                  description: "Please contact me directly for my latest resume.",
+                  title: "Resume Downloaded",
+                  description: "Thank you for your interest!",
                 });
               }}
             >

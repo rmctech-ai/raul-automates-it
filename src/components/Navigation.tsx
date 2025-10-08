@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,13 +39,13 @@ const Navigation = () => {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 px-4">
-          {/* Logo */}
+          {/* Logo/Name */}
           <div className="flex items-center">
             <button
               onClick={() => scrollToSection("#home")}
-              className="hover:scale-105 transition-transform"
+              className="text-xl md:text-2xl font-bold gradient-text hover:scale-105 transition-transform"
             >
-              <img src={logo} alt="Raul M. Cachola - Technical Virtual Assistant" className="h-12 w-auto" />
+              Raul M. Cachola
             </button>
           </div>
 
