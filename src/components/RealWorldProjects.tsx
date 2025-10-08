@@ -1,17 +1,31 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Zap, Workflow, Settings, TrendingUp, Mail, Users, Clock, CheckCircle2 } from "lucide-react";
+import { Zap, Workflow, Settings, TrendingUp, Mail, Users, Clock, CheckCircle2, Bot } from "lucide-react";
 
-// Import project images
+// Import workflow diagram images
+import zapierTypeformFlow from "@/assets/projects/zapier-typeform-flow.png";
+import makeConvertkitFlow from "@/assets/projects/make-convertkit-flow.png";
+import n8nGhlLeadFlow from "@/assets/projects/n8n-ghl-lead-flow.png";
+import ghlN8nCampaignFlow from "@/assets/projects/ghl-n8n-campaign-flow.png";
+import n8nSmsIntegrationFlow from "@/assets/projects/n8n-sms-integration-flow.png";
+
+// Import workflow screenshots
+import n8nEcommerceChat from "@/assets/projects/n8n-ecommerce-chat.png";
+import n8nTelecomWebhook from "@/assets/projects/n8n-telecom-webhook.png";
+import n8nFormMultiplatform from "@/assets/projects/n8n-form-multiplatform.png";
+import mondayAutomation from "@/assets/projects/monday-automation.png";
+
+// Import original project images
 import ghlRepstack from "@/assets/projects/ghl-repstack.png";
 import ghlMastermind from "@/assets/projects/ghl-mastermind.png";
 import ghlLeadCapture from "@/assets/projects/ghl-lead-capture.png";
 import zapierContent from "@/assets/projects/zapier-content.png";
 import zapierLeads from "@/assets/projects/zapier-leads.png";
+import zapierLeadsDetailed from "@/assets/projects/zapier-leads-detailed.png";
 import zapierBlog from "@/assets/projects/zapier-blog.png";
-import makeSlackSheets from "@/assets/projects/make-slack-sheets.png";
 import makeFormLeads from "@/assets/projects/make-form-leads.png";
+import makeSlackSheets from "@/assets/projects/make-slack-sheets.png";
 import n8nTradingAI from "@/assets/projects/n8n-trading-ai.png";
 
 interface Project {
@@ -20,12 +34,48 @@ interface Project {
   image: string;
   tags: string[];
   impact: string[];
-  platform: "gohighlevel" | "zapier" | "make" | "n8n";
+  platform: "gohighlevel" | "zapier" | "make" | "n8n" | "other";
 }
 
 const RealWorldProjects = () => {
   const projects: Project[] = [
     // GoHighLevel Projects
+    {
+      title: "GoHighLevel CRM Campaign Setup",
+      description: "Designed and implemented a sophisticated CRM campaign system that tracks visitor behavior across multiple touchpoints, automatically segments leads, and triggers personalized email sequences based on engagement patterns.",
+      image: ghlN8nCampaignFlow,
+      tags: ["GoHighLevel", "n8n", "Campaign Management", "Email Automation"],
+      impact: [
+        "Automated follow-ups for leads who visited product pages",
+        "Tracked email engagement and adjusted campaigns in real-time",
+        "Increased email open rates by 60%"
+      ],
+      platform: "gohighlevel"
+    },
+    {
+      title: "Two-Way SMS & API Integration",
+      description: "Developed a robust two-way SMS communication system integrating Telekom's API with GoHighLevel through n8n. The system enables automated SMS conversations, lead qualification, and seamless CRM updates based on customer responses.",
+      image: n8nSmsIntegrationFlow,
+      tags: ["GoHighLevel", "n8n", "SMS", "Telekom API", "Two-Way Communication"],
+      impact: [
+        "Enabled real-time SMS conversations with leads",
+        "Automated lead scoring based on SMS responses",
+        "Reduced manual data entry by 90%"
+      ],
+      platform: "gohighlevel"
+    },
+    {
+      title: "Lead Capture via n8n + GHL",
+      description: "Built an automated lead capture system that tracks website visitor behavior, sends targeted freebies based on pages visited, and syncs all contact information with GoHighLevel CRM for comprehensive lead nurturing.",
+      image: n8nGhlLeadFlow,
+      tags: ["n8n", "GoHighLevel", "Lead Generation", "Behavioral Tracking"],
+      impact: [
+        "Captured and synced 500+ leads per week automatically",
+        "Personalized offers based on visitor behavior increased conversions by 55%",
+        "Streamlined lead data flow between systems"
+      ],
+      platform: "gohighlevel"
+    },
     {
       title: "RepStack CRM Pipeline Management",
       description: "Sophisticated opportunity tracking system managing the complete sales lifecycle from lead to close. Features intelligent stage management, automated task routing, and real-time pipeline analytics.",
@@ -65,6 +115,18 @@ const RealWorldProjects = () => {
 
     // Zapier Projects
     {
+      title: "Form Submission Workflow",
+      description: "Created an intelligent form automation that captures Typeform responses, enriches lead data through multiple touchpoints, updates Google Sheets for team visibility, and automatically creates detailed contact records in HubSpot CRM with lead scoring.",
+      image: zapierTypeformFlow,
+      tags: ["Zapier", "Typeform", "Google Sheets", "HubSpot", "Lead Scoring"],
+      impact: [
+        "Automated complete onboarding workflow from form to CRM",
+        "Synced form responses across 3 platforms in real-time",
+        "Eliminated 15 hours of manual data entry per week"
+      ],
+      platform: "zapier"
+    },
+    {
       title: "Content Repurposing Engine",
       description: "AI-powered workflow that transforms meeting transcriptions into multiple content formats. Uses path conditions to intelligently route content, create transcriptions, and generate blog-ready assets.",
       image: zapierContent,
@@ -89,6 +151,18 @@ const RealWorldProjects = () => {
       platform: "zapier"
     },
     {
+      title: "Advanced Lead Management System",
+      description: "Engineered a sophisticated lead management workflow that captures leads from multiple sources, enriches data through third-party APIs, and distributes qualified leads to the appropriate sales representatives based on territory and expertise.",
+      image: zapierLeadsDetailed,
+      tags: ["Zapier", "Lead Distribution", "CRM", "Sales Automation"],
+      impact: [
+        "Routed 800+ leads monthly with 100% accuracy",
+        "Reduced lead assignment time from 2 hours to 30 seconds",
+        "Improved sales team response time by 65%"
+      ],
+      platform: "zapier"
+    },
+    {
       title: "Blog Publishing Automation",
       description: "End-to-end content publishing pipeline featuring AI-generated images, multi-platform distribution, and social media syndication across Instagram, LinkedIn, and Google Sheets logging.",
       image: zapierBlog,
@@ -103,14 +177,14 @@ const RealWorldProjects = () => {
 
     // Make Projects
     {
-      title: "Slack Team Notification System",
-      description: "Real-time Google Sheets monitoring workflow that routes updates to multiple Slack channels based on content logic. Features smart filtering and multi-channel message distribution.",
-      image: makeSlackSheets,
-      tags: ["Team Communication", "Real-Time Alerts", "Data Monitoring"],
+      title: "ConvertKit Audience Tracking",
+      description: "Engineered a comprehensive marketing automation that tracks email subscriber behavior through ConvertKit tags, monitors video engagement via Wistia analytics, and updates lead scores in HubSpot CRM based on multi-channel engagement patterns.",
+      image: makeConvertkitFlow,
+      tags: ["Make", "ConvertKit", "Wistia", "HubSpot", "Behavioral Analytics"],
       impact: [
-        "Instant team notifications eliminating email delays",
-        "Smart routing ensuring relevant updates reach right teams",
-        "15-minute polling keeping everyone synchronized"
+        "Tracked audience engagement across email and video platforms",
+        "Automated lead scoring based on content consumption patterns",
+        "Identified high-intent leads 3x faster"
       ],
       platform: "make"
     },
@@ -126,8 +200,56 @@ const RealWorldProjects = () => {
       ],
       platform: "make"
     },
+    {
+      title: "Slack Team Notification System",
+      description: "Real-time Google Sheets monitoring workflow that routes updates to multiple Slack channels based on content logic. Features smart filtering and multi-channel message distribution.",
+      image: makeSlackSheets,
+      tags: ["Team Communication", "Real-Time Alerts", "Data Monitoring"],
+      impact: [
+        "Instant team notifications eliminating email delays",
+        "Smart routing ensuring relevant updates reach right teams",
+        "15-minute polling keeping everyone synchronized"
+      ],
+      platform: "make"
+    },
 
     // n8n Projects
+    {
+      title: "E-Commerce AI Chat Assistant",
+      description: "Built an intelligent conversational AI using n8n that handles customer inquiries, processes bulk orders, applies dynamic discounts, and maintains context throughout the conversation using Google Gemini Chat Model and Simple Memory for personalized shopping experiences.",
+      image: n8nEcommerceChat,
+      tags: ["n8n", "AI Agent", "Google Gemini", "E-Commerce", "Chatbot"],
+      impact: [
+        "Handled 500+ customer conversations simultaneously",
+        "Automated bulk order processing with 25% discount logic",
+        "Reduced customer service workload by 70%"
+      ],
+      platform: "n8n"
+    },
+    {
+      title: "Telecom Webhook Integration",
+      description: "Developed a robust webhook-based automation that receives telecom events, normalizes data formats, performs conditional logic checks, and integrates with GoHighLevel CRM to create or update contacts while triggering appropriate communication workflows.",
+      image: n8nTelecomWebhook,
+      tags: ["n8n", "Webhooks", "GoHighLevel", "Telecom API", "Contact Management"],
+      impact: [
+        "Processed 1000+ webhook events daily",
+        "Achieved 99.9% uptime for critical integrations",
+        "Reduced contact sync delays to under 3 seconds"
+      ],
+      platform: "n8n"
+    },
+    {
+      title: "Multi-Platform Form Sync",
+      description: "Created a comprehensive form processing system that captures Google Form submissions, enriches and validates data, then simultaneously updates Google Sheets for reporting, sends formatted notifications to Slack channels, and delivers personalized confirmation emails via Gmail.",
+      image: n8nFormMultiplatform,
+      tags: ["n8n", "Google Forms", "Google Sheets", "Slack", "Gmail"],
+      impact: [
+        "Synced data across 4 platforms in under 5 seconds",
+        "Automated 100% of form response handling",
+        "Enabled real-time team collaboration on new submissions"
+      ],
+      platform: "n8n"
+    },
     {
       title: "No-Code Trading AI Agent",
       description: "Advanced stock analysis workflow combining multiple timeframes, news sentiment, and AI-powered decision making. Aggregates data from APIs, processes through Google Gemini, and delivers actionable insights via Telegram.",
@@ -139,21 +261,37 @@ const RealWorldProjects = () => {
         "Telegram integration for instant actionable alerts"
       ],
       platform: "n8n"
-    }
+    },
+
+    // Project Management
+    {
+      title: "Technical Virtual Assistant Journey",
+      description: "Comprehensive project tracking system built on Monday.dev to manage my automation portfolio across multiple platforms. Tracks automation tasks, email campaigns, and integration projects with detailed status monitoring, priority management, and timeline visualization.",
+      image: mondayAutomation,
+      tags: ["Monday.dev", "Project Management", "Task Tracking", "Portfolio"],
+      impact: [
+        "Organized 50+ automation projects across 4 platforms",
+        "Improved project visibility and client communication",
+        "Streamlined workflow documentation and delivery"
+      ],
+      platform: "other"
+    },
   ];
 
   const platformNames = {
     gohighlevel: "GoHighLevel",
     zapier: "Zapier",
     make: "Make",
-    n8n: "n8n"
+    n8n: "n8n",
+    other: "Other Tools"
   };
 
   const platformIcons = {
     gohighlevel: Settings,
     zapier: Zap,
     make: Workflow,
-    n8n: TrendingUp
+    n8n: TrendingUp,
+    other: Bot
   };
 
   return (
@@ -172,7 +310,7 @@ const RealWorldProjects = () => {
 
         {/* Platform Tabs */}
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="grid w-full grid-cols-5 mb-12 bg-card/50 backdrop-blur-sm border border-border/50 p-1">
+          <TabsList className="grid w-full grid-cols-6 mb-12 bg-card/50 backdrop-blur-sm border border-border/50 p-1">
             <TabsTrigger value="all" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               All Projects
             </TabsTrigger>
@@ -239,7 +377,7 @@ const RealWorldProjects = () => {
                   <Workflow className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-foreground">{projects.length}</div>
+                  <div className="text-3xl font-bold text-foreground">{projects.length}+</div>
                   <div className="text-sm text-muted-foreground">Live Automations</div>
                 </div>
               </div>
@@ -267,7 +405,7 @@ const RealWorldProjects = () => {
                   <Users className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-foreground">4</div>
+                  <div className="text-3xl font-bold text-foreground">5+</div>
                   <div className="text-sm text-muted-foreground">Platforms Mastered</div>
                 </div>
               </div>
