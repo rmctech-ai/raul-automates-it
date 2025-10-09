@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Server, Settings, Globe, Mail, Zap, Users, Workflow, Bot, Database, ShoppingCart, Calendar, Brain, Activity } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const About = () => {
   const skills = [
@@ -42,7 +43,7 @@ const About = () => {
             <div className="flex justify-center lg:justify-start mb-8">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/ddc22428-c63a-4518-9b5e-c92ab237f29a.png" 
+                  src={profilePhoto} 
                   alt="Raul M. Cachola - Virtual Assistant & Automation Specialist"
                   className="w-48 h-48 rounded-2xl object-cover border-4 border-primary/20 shadow-lg"
                 />

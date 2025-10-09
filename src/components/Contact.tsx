@@ -13,7 +13,8 @@ import {
   Send, 
   MapPin, 
   Clock,
-  CheckCircle 
+  CheckCircle,
+  Briefcase 
 } from "lucide-react";
 
 const Contact = () => {
@@ -66,6 +67,12 @@ const Contact = () => {
       label: "Facebook",
       value: "Follow me",
       action: () => window.open("https://www.facebook.com/pgenri.cachola/", "_blank"),
+    },
+    {
+      icon: Briefcase,
+      label: "Upwork",
+      value: "Hire me",
+      action: () => window.open("https://www.upwork.com/freelancers/~01e9036c554823230c?mp_source=share", "_blank"),
     },
   ];
 
