@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Zap, Workflow, Settings, TrendingUp, Mail, Users, Clock, CheckCircle2, Bot } from "lucide-react";
+import { Zap, Workflow, Settings, TrendingUp, Mail, Users, Clock, CheckCircle2, Bot, Video, Globe } from "lucide-react";
 
 // Import workflow diagram images
 import zapierTypeformFlow from "@/assets/projects/zapier-typeform-flow.png";
@@ -28,13 +28,21 @@ import makeFormLeads from "@/assets/projects/make-form-leads.png";
 import makeSlackSheets from "@/assets/projects/make-slack-sheets.png";
 import n8nTradingAI from "@/assets/projects/n8n-trading-ai.png";
 
+// Import CMS & CRM Tools images
+import hubspotCrm from "@/assets/projects/hubspot-crm.png";
+import wordpressAutomation from "@/assets/projects/wordpress-automation.png";
+
+// Import Video & Email Marketing images
+import wistiaContent from "@/assets/projects/wistia-content.png";
+import convertkitDashboard from "@/assets/projects/convertkit-dashboard.png";
+
 interface Project {
   title: string;
   description: string;
   image: string;
   tags: string[];
   impact: string[];
-  platform: "gohighlevel" | "zapier" | "make" | "n8n" | "other";
+  platform: "gohighlevel" | "zapier" | "make" | "n8n" | "cms_crm" | "video" | "email" | "other";
 }
 
 const RealWorldProjects = () => {
@@ -263,6 +271,60 @@ const RealWorldProjects = () => {
       platform: "n8n"
     },
 
+    // CMS & CRM Tools
+    {
+      title: "HubSpot CRM + N8N Contact Automation",
+      description: "Engineered a sophisticated CRM automation connecting HubSpot with n8n to streamline contact management, lead scoring, and multi-channel engagement tracking. The system automatically enriches contact records, triggers personalized workflows based on interaction data, and synchronizes customer journeys across email, forms, and website activity.",
+      image: hubspotCrm,
+      tags: ["HubSpot", "n8n", "CRM Automation", "Lead Scoring", "Contact Management"],
+      impact: [
+        "Automated contact enrichment reducing manual data entry by 85%",
+        "Intelligent lead scoring identifying high-value prospects 4x faster",
+        "Seamless multi-platform sync ensuring 100% data accuracy"
+      ],
+      platform: "cms_crm"
+    },
+    {
+      title: "WordPress + WooCommerce Automation Suite",
+      description: "Developed a comprehensive WordPress automation ecosystem integrating WooCommerce with HostGator hosting infrastructure. Built custom form integrations that capture leads and trigger automated workflows, implemented server-side automation for order processing, inventory management, and customer communication. Optimized hosting configurations for peak performance and reliability.",
+      image: wordpressAutomation,
+      tags: ["WordPress", "WooCommerce", "HostGator", "Form Integration", "Server Management"],
+      impact: [
+        "Automated 100% of order fulfillment workflows",
+        "Form integration capturing 300+ qualified leads monthly",
+        "Server optimization achieving 99.8% uptime and 2.1s load times"
+      ],
+      platform: "cms_crm"
+    },
+
+    // Video Marketing
+    {
+      title: "Wistia Video Analytics + Automation",
+      description: "Created an intelligent video marketing automation leveraging Wistia's analytics capabilities to track viewer engagement, identify high-intent prospects, and trigger personalized follow-up sequences. The system monitors video completion rates, heat maps, and viewer behavior patterns to automatically segment audiences and deliver targeted content recommendations based on viewing history.",
+      image: wistiaContent,
+      tags: ["Wistia", "Video Marketing", "Analytics", "Audience Segmentation", "Engagement Tracking"],
+      impact: [
+        "Tracked video engagement across 500+ prospects monthly",
+        "Automated audience segmentation based on viewing behavior",
+        "Increased video-to-lead conversion rate by 72%"
+      ],
+      platform: "video"
+    },
+
+    // Email Marketing
+    {
+      title: "ConvertKit Email Campaign Automation",
+      description: "Built a sophisticated email marketing automation system using ConvertKit to manage subscriber journeys, segment audiences based on engagement patterns, and deliver personalized content sequences. Integrated with landing page forms, automated tagging systems, and behavioral triggers to nurture leads through customized email workflows that adapt based on subscriber actions and preferences.",
+      image: convertkitDashboard,
+      tags: ["ConvertKit", "Email Automation", "Subscriber Management", "Segmentation", "Campaign Workflows"],
+      impact: [
+        "Managed 5,000+ subscriber email journeys with automated sequences",
+        "Behavioral segmentation improving open rates by 58%",
+        "Automated tag-based workflows reducing manual campaign management by 90%"
+      ],
+      platform: "email"
+    },
+
     // Project Management
     {
       title: "Technical Virtual Assistant Journey",
@@ -283,6 +345,9 @@ const RealWorldProjects = () => {
     zapier: "Zapier",
     make: "Make",
     n8n: "n8n",
+    cms_crm: "CMS & CRM Tools",
+    video: "Video Marketing",
+    email: "Email Marketing",
     other: "Project Management"
   };
 
@@ -291,6 +356,9 @@ const RealWorldProjects = () => {
     zapier: Zap,
     make: Workflow,
     n8n: TrendingUp,
+    cms_crm: Globe,
+    video: Video,
+    email: Mail,
     other: Bot
   };
 
@@ -310,8 +378,8 @@ const RealWorldProjects = () => {
 
         {/* Platform Tabs */}
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="grid w-full grid-cols-6 mb-12 bg-card/50 backdrop-blur-sm border border-border/50 p-1">
-            <TabsTrigger value="all" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-9 mb-12 bg-card/50 backdrop-blur-sm border border-border/50 p-1 gap-1">
+            <TabsTrigger value="all" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground col-span-3 lg:col-span-1">
               All Projects
             </TabsTrigger>
             {Object.entries(platformNames).map(([key, name]) => {
