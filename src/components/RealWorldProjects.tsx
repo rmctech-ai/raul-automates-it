@@ -340,7 +340,7 @@ const RealWorldProjects = () => {
                   <div className="flex items-center gap-3 mb-6">
                     <Icon className="w-6 h-6 text-accent" />
                     <h3 className="text-2xl font-bold text-foreground">
-                      {platformNames[platform as keyof typeof platformNames]} Projects
+                      {platformNames[platform as keyof typeof platformNames]}{platform !== 'other' && ' Projects'}
                     </h3>
                   </div>
                   
