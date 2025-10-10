@@ -283,7 +283,7 @@ const RealWorldProjects = () => {
     zapier: "Zapier",
     make: "Make",
     n8n: "n8n",
-    other: "Other Tools"
+    other: "Project Management (monday.com)"
   };
 
   const platformIcons = {
