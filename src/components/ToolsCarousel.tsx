@@ -4,7 +4,8 @@ import {
   Workflow, Zap, Settings, Activity, Globe, Server, Mail, Users, Calendar, 
   ShoppingCart, Database, Brain, Bot, Code, BarChart3, Cloud, MessageSquare,
   GitBranch, TestTube, Phone, FileText, Layers, Cpu, Terminal, Building2,
-  Search, Monitor, Palette, Shield, Lock, ChevronRight
+  Search, Monitor, Palette, Shield, Lock, ChevronRight, Sparkles, Eye,
+  PenTool, LineChart, Map, Briefcase, TrendingUp
 } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
@@ -61,8 +62,11 @@ const ToolsCarousel = () => {
       tools: [
         { name: "OpenAI", icon: Brain, color: "text-green-600", description: "GPT & AI models" },
         { name: "Claude", icon: Bot, color: "text-orange-500", description: "Anthropic AI assistant" },
-        { name: "Gemini", icon: Brain, color: "text-blue-500", description: "Google AI" },
         { name: "ChatGPT", icon: MessageSquare, color: "text-green-500", description: "Conversational AI" },
+        { name: "ChatGPT Deep Research", icon: Search, color: "text-teal-500", description: "Advanced AI research" },
+        { name: "Gemini", icon: Brain, color: "text-blue-500", description: "Google AI" },
+        { name: "NotebookLM", icon: FileText, color: "text-blue-600", description: "AI-powered note-taking" },
+        { name: "Chataid", icon: MessageSquare, color: "text-purple-500", description: "AI chat assistance" },
         { name: "LangChain", icon: Code, color: "text-purple-600", description: "AI development framework" },
         { name: "Pinecone", icon: Database, color: "text-blue-600", description: "Vector database" },
         { name: "Weaviate", icon: Database, color: "text-green-500", description: "Vector search engine" },
@@ -74,11 +78,23 @@ const ToolsCarousel = () => {
       subtitle: "Transforming data into actionable insights with powerful analytics tools",
       tools: [
         { name: "Airtable", icon: Database, color: "text-orange-400", description: "Collaborative database" },
+        { name: "Fathom Analytics", icon: LineChart, color: "text-purple-600", description: "Privacy-first analytics" },
         { name: "Google BigQuery", icon: BarChart3, color: "text-blue-500", description: "Data warehouse" },
         { name: "Snowflake", icon: Cloud, color: "text-blue-600", description: "Cloud data platform" },
         { name: "Looker", icon: BarChart3, color: "text-purple-500", description: "Business intelligence" },
         { name: "Power BI", icon: BarChart3, color: "text-yellow-500", description: "Microsoft analytics" },
         { name: "Supermetrics", icon: BarChart3, color: "text-green-500", description: "Marketing data" }
+      ]
+    },
+    {
+      title: "Development & Design Tools",
+      subtitle: "Building and designing with cutting-edge development platforms",
+      tools: [
+        { name: "Cursor", icon: Code, color: "text-blue-600", description: "AI code editor" },
+        { name: "Lovable", icon: Sparkles, color: "text-pink-500", description: "AI app builder" },
+        { name: "Gamma", icon: PenTool, color: "text-purple-600", description: "AI presentation design" },
+        { name: "Icon", icon: Palette, color: "text-orange-500", description: "Design resources" },
+        { name: "Gumloop", icon: Workflow, color: "text-green-600", description: "Visual automation builder" }
       ]
     },
     {
@@ -94,13 +110,16 @@ const ToolsCarousel = () => {
       ]
     },
     {
-      title: "CRM & Client Management",
+      title: "CRM & Project Management",
       subtitle: "Optimizing customer relationships and business processes",
       tools: [
         { name: "HubSpot", icon: Users, color: "text-orange-600", description: "Inbound marketing CRM" },
         { name: "monday.com", icon: Calendar, color: "text-purple-600", description: "Work management" },
         { name: "Pipedrive", icon: Building2, color: "text-green-500", description: "Sales CRM" },
-        { name: "Salesforce", icon: Cloud, color: "text-blue-500", description: "Enterprise CRM" }
+        { name: "Salesforce", icon: Cloud, color: "text-blue-500", description: "Enterprise CRM" },
+        { name: "Atlas", icon: Map, color: "text-indigo-500", description: "Project mapping & tracking" },
+        { name: "Precision", icon: TrendingUp, color: "text-teal-600", description: "Business optimization" },
+        { name: "Revio", icon: Briefcase, color: "text-blue-700", description: "Revenue management" }
       ]
     },
     {
