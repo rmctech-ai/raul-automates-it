@@ -8,8 +8,11 @@ import AICustomerSupport from "@/components/ai-lab/AICustomerSupport";
 import AILeadQualification from "@/components/ai-lab/AILeadQualification";
 import CaseStudyGenerator from "@/components/ai-lab/CaseStudyGenerator";
 import { Bot, Sparkles } from "lucide-react";
+import { useCustomCursor } from "@/hooks/use-custom-cursor";
 
 const AILab = () => {
+  useCustomCursor();
+
   return (
     <div className="min-h-screen bg-background/90 backdrop-blur-sm">
       <Navigation />
