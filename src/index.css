@@ -105,11 +105,42 @@
     transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
   }
 
+  /* Horizontal crosshair line */
+  .custom-cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 1.5px;
+    background: hsl(38 80% 50% / 0.7);
+    border-radius: 1px;
+  }
+
+  /* Vertical crosshair line */
+  .custom-cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.5px;
+    height: 12px;
+    background: hsl(38 80% 50% / 0.7);
+    border-radius: 1px;
+  }
+
   .custom-cursor.clicked {
     width: 24px;
     height: 24px;
     border-color: hsl(180 55% 42% / 0.8);
     box-shadow: 0 0 20px hsl(180 55% 42% / 0.3);
+  }
+
+  .custom-cursor.clicked::before,
+  .custom-cursor.clicked::after {
+    background: hsl(180 55% 42% / 0.8);
   }
 
   html {
