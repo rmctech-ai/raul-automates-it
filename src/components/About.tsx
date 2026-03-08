@@ -77,22 +77,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* Tools & Technologies */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-foreground">Tools & Technologies</h3>
-              <div className="flex flex-wrap gap-3">
-                {tools.map((tool) => (
-                  <Badge 
-                    key={tool.name} 
-                    variant="secondary" 
-                    className="bg-secondary/50 text-foreground hover:bg-primary/20 hover:text-primary transition-colors flex items-center gap-2 px-3 py-2"
-                  >
-                    <tool.icon className="w-4 h-4" />
-                    {tool.name}
-                  </Badge>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right Column - Skills Grid */}
