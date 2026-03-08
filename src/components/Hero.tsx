@@ -21,13 +21,13 @@ const Hero = () => {
       {/* Floating soft orbs */}
       <motion.div
         className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(192 85% 48% / 0.04), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, hsl(38 80% 50% / 0.05), transparent 70%)" }}
         animate={{ scale: [1, 1.15, 1], x: [0, 20, 0], y: [0, -15, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(225 70% 60% / 0.04), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, hsl(180 55% 42% / 0.04), transparent 70%)" }}
         animate={{ scale: [1, 1.2, 1], x: [0, -15, 0], y: [0, 20, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
