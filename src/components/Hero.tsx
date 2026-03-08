@@ -16,18 +16,18 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Soft gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
       
-      {/* Floating soft orbs */}
+      {/* Floating luminous orbs */}
       <motion.div
         className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(38 80% 50% / 0.05), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, hsl(42 90% 55% / 0.06), transparent 70%)" }}
         animate={{ scale: [1, 1.15, 1], x: [0, 20, 0], y: [0, -15, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(180 55% 42% / 0.04), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, hsl(175 65% 45% / 0.05), transparent 70%)" }}
         animate={{ scale: [1, 1.2, 1], x: [0, -15, 0], y: [0, 20, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />

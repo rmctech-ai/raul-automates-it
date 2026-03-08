@@ -50,7 +50,7 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         isScrolled 
-          ? "bg-background/80 backdrop-blur-xl border-b border-primary/10 shadow-[0_4px_30px_hsl(187_100%_50%/0.05)]" 
+          ? "bg-background/85 backdrop-blur-xl border-b border-primary/10 shadow-[0_4px_30px_hsl(42_90%_55%/0.06)]" 
           : "bg-transparent"
       }`}
     >

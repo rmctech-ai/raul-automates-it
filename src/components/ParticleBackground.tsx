@@ -71,7 +71,7 @@ const ParticleBackground = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(38, 80%, 50%, ${p.opacity})`;
+        ctx.fillStyle = `hsla(42, 90%, 55%, ${p.opacity})`;
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
@@ -81,7 +81,7 @@ const ParticleBackground = () => {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `hsla(38, 80%, 50%, ${0.04 * (1 - d / connectionDistance)})`;
+            ctx.strokeStyle = `hsla(42, 90%, 55%, ${0.06 * (1 - d / connectionDistance)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
