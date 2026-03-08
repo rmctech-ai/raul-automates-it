@@ -27,6 +27,8 @@ const Index = () => {
         <div className="cyber-divider" />
         <Portfolio />
         <div className="cyber-divider" />
+        <RealWorldProjects />
+        <div className="cyber-divider" />
         <Services />
         <div className="cyber-divider" />
         <Testimonials />
