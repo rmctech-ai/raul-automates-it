@@ -89,12 +89,8 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     overflow-x: hidden;
-    cursor: none;
   }
 
-  * {
-    cursor: none !important;
-  }
 
   .custom-cursor {
     position: fixed;
