@@ -9,11 +9,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-card/30 backdrop-blur-sm border-t border-border/50">
+    <footer className="relative z-10 border-t border-primary/10 bg-background/80 backdrop-blur-xl">
       <div className="container-custom">
         <div className="py-12">
           <div className="grid md:grid-cols-3 gap-8 items-center">
-            {/* Brand */}
             <div className="text-center md:text-left">
               <h3 className="text-xl font-bold gradient-text mb-2">Raul M. Cachola</h3>
               <p className="text-sm text-muted-foreground">
@@ -21,7 +20,6 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Navigation Links */}
             <div className="flex justify-center">
               <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm">
                 {[
@@ -44,13 +42,12 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Back to Top */}
             <div className="text-center md:text-right">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={scrollToTop}
-                className="border-primary/30 text-primary hover:bg-primary/10"
+                className="border-primary/20 text-primary hover:bg-primary/10 hover:border-primary/40"
               >
                 <ArrowUp className="w-4 h-4 mr-2" />
                 Back to Top
@@ -59,16 +56,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="py-6 border-t border-border/30">
+        <div className="py-6 border-t border-primary/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <span>© {currentYear} Raul M. Cachola. All rights reserved.</span>
             </div>
-            
             <div className="flex items-center gap-1">
               <span>Built with</span>
-              <Heart className="w-4 h-4 text-red-500 fill-current" />
+              <Heart className="w-4 h-4 text-primary fill-current" />
               <span>for automation excellence</span>
             </div>
           </div>

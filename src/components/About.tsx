@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Server, Settings, Globe, Mail, Zap, Users, Workflow, Bot, Database, ShoppingCart, Calendar, Brain, Activity } from "lucide-react";
+import { Server, Settings, Globe, Mail, Zap, Users } from "lucide-react";
+import { motion } from "framer-motion";
 import profilePhoto from "@/assets/profile-photo.png";
 
 const About = () => {
@@ -13,41 +13,27 @@ const About = () => {
     { icon: Users, label: "CRM Management", color: "text-accent" },
   ];
 
-  const tools = [
-    { name: "n8n", icon: Workflow },
-    { name: "Zapier", icon: Zap },
-    { name: "Make.com", icon: Settings },
-    { name: "GoHighLevel", icon: Activity },
-    { name: "WordPress", icon: Globe },
-    { name: "Linux", icon: Server },
-    { name: "DNS Management", icon: Server },
-    { name: "G-Suite", icon: Mail },
-    { name: "Outlook", icon: Mail },
-    { name: "Webmail", icon: Mail },
-    { name: "HubSpot", icon: Users },
-    { name: "monday.com", icon: Calendar },
-    { name: "Shopify", icon: ShoppingCart },
-    { name: "Airtable", icon: Database },
-    { name: "OpenAI", icon: Brain },
-    { name: "Domain Management", icon: Globe },
-    { name: "AI Integration", icon: Bot }
-  ];
-
   return (
-    <section id="about" className="section-padding bg-muted/20">
+    <section id="about" className="section-padding relative">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Content */}
-          <div className="space-y-8 animate-slide-up">
+          {/* Left Column */}
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             {/* Profile Photo */}
             <div className="flex justify-center lg:justify-start mb-8">
-              <div className="relative">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-accent/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
                 <img 
                   src={profilePhoto} 
                   alt="Raul M. Cachola - Virtual Assistant & Automation Specialist"
-                  className="w-48 h-48 rounded-2xl object-cover border-4 border-primary/20 shadow-lg"
+                  className="relative w-48 h-48 rounded-2xl object-cover border border-primary/20"
                 />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
             <div className="space-y-4">
@@ -63,49 +49,60 @@ const About = () => {
                 Automation Specialist with a background in customer service, technical website support, 
                 and business process automation.
               </p>
-
               <p>
                 I previously worked as a <span className="text-primary font-medium">Technical Website Advisor at HostGator</span> where 
                 I gained deep experience in DNS configuration, Linux server support, WordPress troubleshooting, 
                 hosting management, and email setup across various platforms.
               </p>
-
               <p>
                 Today, I specialize in helping businesses automate processes using tools like{" "}
                 <span className="text-accent font-medium">n8n, Zapier, and GoHighLevel</span>. My mission is to save 
                 clients time, reduce manual work, and create systems that deliver measurable results.
               </p>
             </div>
-
-          </div>
+          </motion.div>
 
           {/* Right Column - Skills Grid */}
-          <div className="space-y-8 animate-scale-in">
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-2xl font-bold text-center lg:text-left">Core Expertise</h3>
             
             <div className="grid grid-cols-2 gap-4">
               {skills.map((skill, index) => (
-                <Card key={skill.label} className="card-hover bg-card/50 backdrop-blur-sm border-border/50">
-                  <CardContent className="p-6 text-center space-y-4">
-                    <skill.icon className={`w-8 h-8 mx-auto ${skill.color}`} />
-                    <h4 className="font-semibold text-foreground">{skill.label}</h4>
-                  </CardContent>
-                </Card>
+                <motion.div
+                  key={skill.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="card-hover bg-card/50 backdrop-blur-sm border-border/50 group">
+                    <CardContent className="p-6 text-center space-y-4">
+                      <skill.icon className={`w-8 h-8 mx-auto ${skill.color} group-hover:drop-shadow-[0_0_8px_hsl(187_100%_50%/0.5)] transition-all duration-300`} />
+                      <h4 className="font-semibold text-foreground text-sm">{skill.label}</h4>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </div>
 
             {/* Experience Stats */}
             <div className="grid grid-cols-2 gap-6 pt-6">
-              <div className="text-center space-y-2">
+              <div className="text-center space-y-2 p-4 rounded-xl border border-primary/10 bg-primary/5">
                 <div className="text-3xl font-bold gradient-text">3+</div>
                 <div className="text-sm text-muted-foreground">Years at HostGator</div>
               </div>
-              <div className="text-center space-y-2">
+              <div className="text-center space-y-2 p-4 rounded-xl border border-primary/10 bg-primary/5">
                 <div className="text-3xl font-bold gradient-text">500+</div>
                 <div className="text-sm text-muted-foreground">Issues Resolved</div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
