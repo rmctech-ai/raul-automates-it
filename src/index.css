@@ -2,82 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cyber-Minimal Design System — Dark futuristic with glowing cyan accents
+/* Frosted Glass Light — Clean, airy, Apple-inspired with soft cyan accents
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Deep dark backgrounds */
-    --background: 220 20% 6%;
-    --foreground: 200 20% 92%;
-    --foreground-secondary: 200 15% 70%;
-    --foreground-muted: 200 10% 50%;
+    /* Light airy backgrounds */
+    --background: 210 25% 97%;
+    --foreground: 215 25% 15%;
+    --foreground-secondary: 215 15% 35%;
+    --foreground-muted: 215 10% 50%;
 
-    /* Card and surface colors — dark glass */
-    --card: 220 18% 10%;
-    --card-foreground: 200 20% 92%;
+    /* Frosted glass cards */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
 
     /* Popover */
-    --popover: 220 18% 10%;
-    --popover-foreground: 200 20% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
 
-    /* Primary — Electric Cyan */
-    --primary: 187 100% 50%;
-    --primary-foreground: 220 20% 6%;
-    --primary-glow: 187 100% 60%;
+    /* Primary — Soft Cyan */
+    --primary: 192 85% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 192 85% 55%;
 
     /* Secondary */
-    --secondary: 220 15% 14%;
-    --secondary-foreground: 200 20% 85%;
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 215 25% 20%;
 
     /* Muted */
-    --muted: 220 15% 12%;
-    --muted-foreground: 200 10% 55%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 10% 45%;
 
-    /* Accent — Neon blue-violet */
-    --accent: 230 80% 65%;
+    /* Accent — Soft blue-violet */
+    --accent: 225 70% 60%;
     --accent-foreground: 0 0% 100%;
 
-    /* Success — Neon green */
-    --success: 160 100% 45%;
-    --success-foreground: 220 20% 6%;
-    --destructive: 0 70% 55%;
+    /* Success */
+    --success: 160 60% 42%;
+    --success-foreground: 0 0% 100%;
+    --destructive: 0 65% 55%;
     --destructive-foreground: 0 0% 100%;
 
     /* Highlight */
-    --highlight: 160 100% 45%;
-    --highlight-foreground: 220 20% 6%;
+    --highlight: 160 60% 42%;
+    --highlight-foreground: 0 0% 100%;
 
     /* Border and input */
-    --border: 220 15% 18%;
-    --input: 220 15% 14%;
-    --ring: 187 100% 50%;
+    --border: 210 15% 90%;
+    --input: 210 15% 95%;
+    --ring: 192 85% 48%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
-    /* Cyber gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(187 100% 50%), hsl(230 80% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(187 100% 50% / 0.15) 0%, hsl(230 80% 65% / 0.1) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(220 18% 10%) 0%, hsl(220 15% 12%) 100%);
+    /* Soft gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(192 85% 48%), hsl(225 70% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(192 85% 48% / 0.08) 0%, hsl(225 70% 60% / 0.06) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.8) 0%, hsl(210 20% 98% / 0.6) 100%);
 
-    /* Neon shadows */
-    --shadow-glow: 0 0 40px hsl(187 100% 50% / 0.2), 0 0 80px hsl(187 100% 50% / 0.1);
-    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.4);
-    --shadow-button: 0 4px 20px hsl(187 100% 50% / 0.3);
+    /* Soft shadows */
+    --shadow-glow: 0 8px 40px hsl(192 85% 48% / 0.1);
+    --shadow-card: 0 2px 16px hsl(215 25% 15% / 0.04), 0 1px 4px hsl(215 25% 15% / 0.02);
+    --shadow-button: 0 4px 16px hsl(192 85% 48% / 0.15);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     /* Sidebar */
-    --sidebar-background: 220 18% 8%;
-    --sidebar-foreground: 200 20% 85%;
-    --sidebar-primary: 187 100% 50%;
-    --sidebar-primary-foreground: 220 20% 6%;
-    --sidebar-accent: 220 15% 14%;
-    --sidebar-accent-foreground: 200 20% 85%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 187 100% 50%;
+    --sidebar-background: 210 20% 96%;
+    --sidebar-foreground: 215 25% 20%;
+    --sidebar-primary: 192 85% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 93%;
+    --sidebar-accent-foreground: 215 25% 25%;
+    --sidebar-border: 210 15% 90%;
+    --sidebar-ring: 192 85% 48%;
   }
 }
 
@@ -92,22 +92,21 @@
     cursor: none;
   }
 
-  /* Custom illuminated cursor */
   * {
     cursor: none !important;
   }
 
   .custom-cursor {
     position: fixed;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: radial-gradient(circle, hsl(187 100% 50%) 0%, hsl(187 100% 50% / 0.6) 30%, hsl(187 100% 50% / 0.15) 70%, transparent 100%);
+    background: radial-gradient(circle, hsl(192 85% 48% / 0.7) 0%, hsl(192 85% 48% / 0.3) 40%, transparent 70%);
     pointer-events: none;
     z-index: 9999;
     transition: transform 0.1s ease;
-    border: 1.5px solid hsl(187 100% 50% / 0.8);
-    box-shadow: 0 0 20px hsl(187 100% 50% / 0.4), 0 0 40px hsl(187 100% 50% / 0.15);
+    border: 1.5px solid hsl(192 85% 48% / 0.5);
+    box-shadow: 0 0 12px hsl(192 85% 48% / 0.2);
   }
 
   .custom-cursor::before {
@@ -116,11 +115,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 6px;
-    height: 6px;
-    background: hsl(187 100% 70%);
+    width: 5px;
+    height: 5px;
+    background: hsl(192 85% 48%);
     border-radius: 50%;
-    box-shadow: 0 0 10px hsl(187 100% 50%), 0 0 20px hsl(187 100% 50%), 0 0 30px hsl(187 100% 50%);
+    box-shadow: 0 0 6px hsl(192 85% 48% / 0.6);
   }
 
   html {
@@ -129,53 +128,38 @@
 }
 
 @layer components {
-  /* Gradient text */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(187 100% 50%), hsl(230 80% 65%));
+    background-image: linear-gradient(135deg, hsl(192 85% 48%), hsl(225 70% 60%));
   }
 
-  /* Glow effect */
   .glow-effect {
-    filter: drop-shadow(0 0 20px hsl(187 100% 50% / 0.4));
+    filter: drop-shadow(0 0 12px hsl(192 85% 48% / 0.2));
   }
 
-  /* Card hover with neon border glow */
+  /* Frosted glass card hover */
   .card-hover {
     @apply transition-all duration-500;
     box-shadow: var(--shadow-card);
-    border: 1px solid hsl(220 15% 18%);
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(210 15% 90%);
   }
 
   .card-hover:hover {
     box-shadow: var(--shadow-glow), var(--shadow-card);
-    border-color: hsl(187 100% 50% / 0.3);
+    border-color: hsl(192 85% 48% / 0.2);
     transform: translateY(-4px);
+    background: hsl(0 0% 100% / 0.85);
   }
 
-  /* Neon button */
   .btn-glow {
     box-shadow: var(--shadow-button);
     transition: var(--transition-smooth);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-glow::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, hsl(187 100% 50% / 0.1), hsl(230 80% 65% / 0.1));
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .btn-glow:hover::before {
-    opacity: 1;
   }
 
   .btn-glow:hover {
-    box-shadow: 0 0 30px hsl(187 100% 50% / 0.4), 0 0 60px hsl(187 100% 50% / 0.15);
+    box-shadow: 0 6px 24px hsl(192 85% 48% / 0.25);
     transform: translateY(-2px);
   }
 
@@ -201,7 +185,6 @@
   }
 
   .hero-text {
-    text-shadow: 0 0 40px hsl(187 100% 50% / 0.2);
     @apply font-medium;
   }
 
@@ -218,56 +201,23 @@
     color: hsl(var(--highlight));
   }
 
-  /* Cyber grid background */
+  /* Subtle dot grid background */
   .cyber-grid {
-    background-image:
-      linear-gradient(hsl(187 100% 50% / 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(187 100% 50% / 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background-image: radial-gradient(circle, hsl(192 85% 48% / 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 
-  /* Scanline overlay */
-  .scanline-overlay::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      hsl(187 100% 50% / 0.01) 2px,
-      hsl(187 100% 50% / 0.01) 4px
-    );
-    z-index: 1;
-  }
-
-  /* Glowing border card */
+  /* Frosted glass card */
   .cyber-card {
     @apply rounded-xl;
-    background: hsl(220 18% 10% / 0.8);
-    backdrop-filter: blur(16px);
-    border: 1px solid hsl(187 100% 50% / 0.1);
-    position: relative;
+    background: hsl(0 0% 100% / 0.6);
+    backdrop-filter: blur(24px);
+    border: 1px solid hsl(192 85% 48% / 0.08);
   }
 
-  .cyber-card::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: linear-gradient(135deg, hsl(187 100% 50% / 0.15), transparent 40%, transparent 60%, hsl(230 80% 65% / 0.15));
-    z-index: -1;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: xor;
-    padding: 1px;
-  }
-
-  /* Section divider line */
+  /* Section divider */
   .cyber-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, hsl(187 100% 50% / 0.3) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, hsl(192 85% 48% / 0.15) 50%, transparent 100%);
   }
 }

@@ -21,8 +21,8 @@ const ParticleBackground = () => {
 
     let animationId: number;
     const particles: Particle[] = [];
-    const particleCount = 80;
-    const connectionDistance = 150;
+    const particleCount = 50;
+    const connectionDistance = 120;
     let mouse = { x: -1000, y: -1000 };
 
     const resize = () => {
@@ -41,10 +41,10 @@ const ParticleBackground = () => {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.1,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 1.5 + 0.5,
+        opacity: Math.random() * 0.2 + 0.05,
       });
     }
 
@@ -58,26 +58,22 @@ const ParticleBackground = () => {
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-        // Mouse repulsion
         const dx = p.x - mouse.x;
         const dy = p.y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          p.vx += dx * 0.001;
-          p.vy += dy * 0.001;
+        if (dist < 100) {
+          p.vx += dx * 0.0005;
+          p.vy += dy * 0.0005;
         }
 
-        // Dampen velocity
         p.vx *= 0.999;
         p.vy *= 0.999;
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(187, 100%, 50%, ${p.opacity})`;
+        ctx.fillStyle = `hsla(192, 85%, 48%, ${p.opacity})`;
         ctx.fill();
 
-        // Connections
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const d = Math.sqrt((p.x - p2.x) ** 2 + (p.y - p2.y) ** 2);
@@ -85,7 +81,7 @@ const ParticleBackground = () => {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `hsla(187, 100%, 50%, ${0.08 * (1 - d / connectionDistance)})`;
+            ctx.strokeStyle = `hsla(192, 85%, 48%, ${0.04 * (1 - d / connectionDistance)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -108,7 +104,7 @@ const ParticleBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.5 }}
     />
   );
 };
