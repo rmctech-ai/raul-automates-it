@@ -9,7 +9,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 border-t border-primary/10 bg-background/80 backdrop-blur-xl">
+    <footer className="relative z-10 border-t border-border bg-card/60 backdrop-blur-xl">
       <div className="container-custom">
         <div className="py-12">
           <div className="grid md:grid-cols-3 gap-8 items-center">
@@ -47,7 +47,7 @@ const Footer = () => {
                 variant="outline"
                 size="sm"
                 onClick={scrollToTop}
-                className="border-primary/20 text-primary hover:bg-primary/10 hover:border-primary/40"
+                className="border-primary/15 text-primary hover:bg-primary/5 hover:border-primary/25"
               >
                 <ArrowUp className="w-4 h-4 mr-2" />
                 Back to Top
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="py-6 border-t border-primary/10">
+        <div className="py-6 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <span>© {currentYear} Raul M. Cachola. All rights reserved.</span>

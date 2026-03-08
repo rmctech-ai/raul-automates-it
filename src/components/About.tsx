@@ -17,27 +17,25 @@ const About = () => {
     <section id="about" className="section-padding relative">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column */}
           <motion.div
             className="space-y-8"
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            {/* Profile Photo */}
             <div className="flex justify-center lg:justify-start mb-8">
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-accent/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/15 to-accent/15 rounded-2xl blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
                 <img 
                   src={profilePhoto} 
                   alt="Raul M. Cachola - Virtual Assistant & Automation Specialist"
-                  className="relative w-48 h-48 rounded-2xl object-cover border border-primary/20"
+                  className="relative w-48 h-48 rounded-2xl object-cover border border-primary/10 shadow-lg"
                 />
               </div>
             </div>
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
                 About <span className="gradient-text">Me</span>
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full" />
@@ -62,28 +60,27 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Right Column - Skills Grid */}
           <motion.div
             className="space-y-8"
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-center lg:text-left">Core Expertise</h3>
+            <h3 className="text-2xl font-bold text-center lg:text-left text-foreground">Core Expertise</h3>
             
             <div className="grid grid-cols-2 gap-4">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.label}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="card-hover bg-card/50 backdrop-blur-sm border-border/50 group">
+                  <Card className="card-hover group">
                     <CardContent className="p-6 text-center space-y-4">
-                      <skill.icon className={`w-8 h-8 mx-auto ${skill.color} group-hover:drop-shadow-[0_0_8px_hsl(187_100%_50%/0.5)] transition-all duration-300`} />
+                      <skill.icon className={`w-8 h-8 mx-auto ${skill.color} group-hover:scale-110 transition-transform duration-300`} />
                       <h4 className="font-semibold text-foreground text-sm">{skill.label}</h4>
                     </CardContent>
                   </Card>
@@ -91,13 +88,12 @@ const About = () => {
               ))}
             </div>
 
-            {/* Experience Stats */}
             <div className="grid grid-cols-2 gap-6 pt-6">
-              <div className="text-center space-y-2 p-4 rounded-xl border border-primary/10 bg-primary/5">
+              <div className="text-center space-y-2 p-4 rounded-xl bg-primary/5 border border-primary/10">
                 <div className="text-3xl font-bold gradient-text">3+</div>
                 <div className="text-sm text-muted-foreground">Years at HostGator</div>
               </div>
-              <div className="text-center space-y-2 p-4 rounded-xl border border-primary/10 bg-primary/5">
+              <div className="text-center space-y-2 p-4 rounded-xl bg-primary/5 border border-primary/10">
                 <div className="text-3xl font-bold gradient-text">500+</div>
                 <div className="text-sm text-muted-foreground">Issues Resolved</div>
               </div>
