@@ -101,12 +101,12 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: radial-gradient(circle, hsl(192 85% 48% / 0.7) 0%, hsl(192 85% 48% / 0.3) 40%, transparent 70%);
+    background: radial-gradient(circle, hsl(38 80% 50% / 0.7) 0%, hsl(38 80% 50% / 0.3) 40%, transparent 70%);
     pointer-events: none;
     z-index: 9999;
     transition: transform 0.1s ease;
-    border: 1.5px solid hsl(192 85% 48% / 0.5);
-    box-shadow: 0 0 12px hsl(192 85% 48% / 0.2);
+    border: 1.5px solid hsl(38 80% 50% / 0.5);
+    box-shadow: 0 0 12px hsl(38 80% 50% / 0.2);
   }
 
   .custom-cursor::before {
@@ -117,9 +117,9 @@
     transform: translate(-50%, -50%);
     width: 5px;
     height: 5px;
-    background: hsl(192 85% 48%);
+    background: hsl(38 80% 50%);
     border-radius: 50%;
-    box-shadow: 0 0 6px hsl(192 85% 48% / 0.6);
+    box-shadow: 0 0 6px hsl(38 80% 50% / 0.6);
   }
 
   html {
