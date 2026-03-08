@@ -70,7 +70,11 @@ const Navigation = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+                className={`transition-colors hover:underline underline-offset-4 ${
+                  item.isRoute 
+                    ? "text-primary font-semibold hover:text-primary/80" 
+                    : "text-foreground hover:text-primary"
+                } ${item.isRoute && location.pathname === item.href ? "underline" : ""}`}
               >
                 {item.name}
               </button>
