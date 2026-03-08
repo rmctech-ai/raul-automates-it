@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ToolsCarousel from "@/components/ToolsCarousel";
+import ParticleBackground from "@/components/ParticleBackground";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -40,16 +41,24 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background/90 backdrop-blur-sm">
+    <div className="min-h-screen bg-background relative">
+      <ParticleBackground />
       <Navigation />
-      <main>
+      <main className="relative z-10">
         <Hero />
-      <About />
-      <ToolsCarousel />
-      <Portfolio />
-      <RealWorldProjects />
-      <Services />
+        <div className="cyber-divider" />
+        <About />
+        <div className="cyber-divider" />
+        <ToolsCarousel />
+        <div className="cyber-divider" />
+        <Portfolio />
+        <div className="cyber-divider" />
+        <RealWorldProjects />
+        <div className="cyber-divider" />
+        <Services />
+        <div className="cyber-divider" />
         <Testimonials />
+        <div className="cyber-divider" />
         <Contact />
       </main>
       <Footer />
