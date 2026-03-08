@@ -2,82 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Frosted Glass Light — Clean, airy, Apple-inspired with soft cyan accents
+/* Warm Futuristic — Cream/warm whites with gold-cyan gradients
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Light airy backgrounds */
-    --background: 210 25% 97%;
-    --foreground: 215 25% 15%;
-    --foreground-secondary: 215 15% 35%;
-    --foreground-muted: 215 10% 50%;
+    /* Warm cream backgrounds */
+    --background: 40 30% 96%;
+    --foreground: 30 20% 15%;
+    --foreground-secondary: 30 12% 35%;
+    --foreground-muted: 30 8% 50%;
 
-    /* Frosted glass cards */
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    /* Warm glass cards */
+    --card: 40 25% 99%;
+    --card-foreground: 30 20% 15%;
 
     /* Popover */
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 40 25% 99%;
+    --popover-foreground: 30 20% 15%;
 
-    /* Primary — Soft Cyan */
-    --primary: 192 85% 48%;
+    /* Primary — Warm Gold */
+    --primary: 38 80% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 192 85% 55%;
+    --primary-glow: 38 85% 58%;
 
     /* Secondary */
-    --secondary: 210 20% 94%;
-    --secondary-foreground: 215 25% 20%;
+    --secondary: 40 20% 93%;
+    --secondary-foreground: 30 20% 20%;
 
     /* Muted */
-    --muted: 210 15% 95%;
-    --muted-foreground: 215 10% 45%;
+    --muted: 40 15% 94%;
+    --muted-foreground: 30 10% 45%;
 
-    /* Accent — Soft blue-violet */
-    --accent: 225 70% 60%;
+    /* Accent — Teal-Cyan */
+    --accent: 180 55% 42%;
     --accent-foreground: 0 0% 100%;
 
     /* Success */
-    --success: 160 60% 42%;
+    --success: 160 50% 42%;
     --success-foreground: 0 0% 100%;
     --destructive: 0 65% 55%;
     --destructive-foreground: 0 0% 100%;
 
     /* Highlight */
-    --highlight: 160 60% 42%;
+    --highlight: 38 80% 50%;
     --highlight-foreground: 0 0% 100%;
 
     /* Border and input */
-    --border: 210 15% 90%;
-    --input: 210 15% 95%;
-    --ring: 192 85% 48%;
+    --border: 40 15% 88%;
+    --input: 40 15% 93%;
+    --ring: 38 80% 50%;
 
     --radius: 0.875rem;
 
-    /* Soft gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(192 85% 48%), hsl(225 70% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(192 85% 48% / 0.08) 0%, hsl(225 70% 60% / 0.06) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.8) 0%, hsl(210 20% 98% / 0.6) 100%);
+    /* Warm gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(38 80% 50%), hsl(180 55% 42%));
+    --gradient-hero: linear-gradient(135deg, hsl(38 80% 50% / 0.08) 0%, hsl(180 55% 42% / 0.06) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(40 25% 99% / 0.8) 0%, hsl(40 20% 96% / 0.6) 100%);
 
-    /* Soft shadows */
-    --shadow-glow: 0 8px 40px hsl(192 85% 48% / 0.1);
-    --shadow-card: 0 2px 16px hsl(215 25% 15% / 0.04), 0 1px 4px hsl(215 25% 15% / 0.02);
-    --shadow-button: 0 4px 16px hsl(192 85% 48% / 0.15);
+    /* Warm shadows */
+    --shadow-glow: 0 8px 40px hsl(38 80% 50% / 0.12);
+    --shadow-card: 0 2px 16px hsl(30 20% 15% / 0.04), 0 1px 4px hsl(30 20% 15% / 0.02);
+    --shadow-button: 0 4px 16px hsl(38 80% 50% / 0.18);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     /* Sidebar */
-    --sidebar-background: 210 20% 96%;
-    --sidebar-foreground: 215 25% 20%;
-    --sidebar-primary: 192 85% 48%;
+    --sidebar-background: 40 20% 95%;
+    --sidebar-foreground: 30 20% 20%;
+    --sidebar-primary: 38 80% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 15% 93%;
-    --sidebar-accent-foreground: 215 25% 25%;
-    --sidebar-border: 210 15% 90%;
-    --sidebar-ring: 192 85% 48%;
+    --sidebar-accent: 40 15% 91%;
+    --sidebar-accent-foreground: 30 20% 25%;
+    --sidebar-border: 40 15% 88%;
+    --sidebar-ring: 38 80% 50%;
   }
 }
 
