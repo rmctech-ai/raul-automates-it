@@ -13,29 +13,39 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    // Custom cursor functionality
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
     document.body.appendChild(cursor);
 
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
     const moveCursor = (e: MouseEvent) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     };
 
-    const scaleCursor = () => {
-      cursor.style.transform = 'scale(1.5)';
-      setTimeout(() => {
-        cursor.style.transform = 'scale(1)';
-      }, 100);
+    const animate = () => {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      cursor.style.left = cursorX - 16 + 'px';
+      cursor.style.top = cursorY - 16 + 'px';
+      requestAnimationFrame(animate);
     };
+
+    const onDown = () => cursor.classList.add('clicked');
+    const onUp = () => cursor.classList.remove('clicked');
 
     document.addEventListener('mousemove', moveCursor);
-    document.addEventListener('click', scaleCursor);
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('mouseup', onUp);
+    const raf = requestAnimationFrame(animate);
 
     return () => {
       document.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('click', scaleCursor);
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('mouseup', onUp);
+      cancelAnimationFrame(raf);
       document.body.removeChild(cursor);
     };
   }, []);
