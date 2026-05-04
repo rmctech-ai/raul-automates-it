@@ -420,7 +420,7 @@ const RealWorldProjects = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {projects.filter(p => p.featured).slice(0, 4).map((project, index) => (
-                <ProjectCard key={`feat-${index}`} project={project} index={index} platformIcons={platformIcons} />
+                <ProjectCard key={`feat-${index}`} project={project} index={index} />
               ))}
             </div>
             <div className="relative my-16">
@@ -546,20 +546,76 @@ const RealWorldProjects = () => {
 };
 
 // Project Card Component
+const platformAccent: Record<Project["platform"], string> = {
+  gohighlevel: "from-primary/30 to-accent/20",
+  zapier: "from-orange-500/30 to-primary/20",
+  make: "from-fuchsia-500/30 to-primary/20",
+  n8n: "from-rose-500/30 to-primary/20",
+  cms_crm: "from-emerald-500/30 to-primary/20",
+  video: "from-sky-500/40 to-primary/20",
+  email: "from-amber-500/30 to-primary/20",
+  other: "from-primary/30 to-accent/20",
+};
+
+const platformIconMap = {
+  gohighlevel: Settings,
+  zapier: Zap,
+  make: Workflow,
+  n8n: TrendingUp,
+  cms_crm: Globe,
+  video: Video,
+  email: Mail,
+  other: Bot,
+} as const;
+
+const BrandedThumbnail = ({ project }: { project: Project }) => {
+  const Icon = platformIconMap[project.platform];
+  const accent = project.accent === "sky" ? "from-sky-500/50 to-sky-700/30" : platformAccent[project.platform];
+  return (
+    <div className={`relative w-full h-full bg-gradient-to-br ${accent} flex flex-col items-center justify-center p-6 text-center`}>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.15),transparent_60%)]" />
+      <div className="absolute inset-0 bg-background/40" />
+      <div className="relative z-10 space-y-3">
+        <div className="mx-auto w-12 h-12 rounded-xl bg-background/80 border border-primary/30 flex items-center justify-center shadow-[0_0_20px_-4px_hsl(var(--primary)/0.5)]">
+          <Icon className="w-6 h-6 text-primary" />
+        </div>
+        <div className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+          Automation Specialist
+        </div>
+        <div className="text-sm font-semibold text-foreground leading-snug px-2 line-clamp-2">
+          {project.title}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
-    <Card 
-      className="card-hover bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden animate-slide-up group"
+    <Card
+      className="card-hover bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden animate-slide-up group relative"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
+      {project.featured && (
+        <div className="absolute top-3 right-3 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold shadow-lg">
+          <Star className="w-3 h-3 fill-current" />
+          Featured
+        </div>
+      )}
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden bg-muted">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60" />
+        {project.branded || !project.image ? (
+          <BrandedThumbnail project={project} />
+        ) : (
+          <>
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60" />
+          </>
+        )}
       </div>
 
       <CardHeader>
