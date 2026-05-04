@@ -410,6 +410,32 @@ const RealWorldProjects = () => {
           </p>
         </div>
 
+        {/* Featured Work */}
+        {projects.some(p => p.featured) && (
+          <div className="mb-16">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <Sparkles className="w-6 h-6 text-primary" />
+              <h3 className="text-3xl font-bold gradient-text">Featured Work</h3>
+              <Sparkles className="w-6 h-6 text-primary" />
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {projects.filter(p => p.featured).slice(0, 4).map((project, index) => (
+                <ProjectCard key={`feat-${index}`} project={project} index={index} platformIcons={platformIcons} />
+              ))}
+            </div>
+            <div className="relative my-16">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-border" />
+              </div>
+              <div className="relative flex justify-center">
+                <span className="bg-background px-6 py-2 text-sm font-bold tracking-widest uppercase text-primary border border-primary/30 rounded-full">
+                  All Projects
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Platform Tabs */}
         <Tabs defaultValue="all" className="w-full">
           <TabsList className="grid w-full grid-cols-3 lg:grid-cols-9 mb-12 bg-card/50 backdrop-blur-sm border border-border/50 p-1 gap-1">
