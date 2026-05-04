@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Users, Calendar, Settings } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Zap, Users, Calendar, Settings, ArrowRight } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -116,14 +117,25 @@ const Services = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16 animate-fade-in">
-          <div className="space-y-4 p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
-            <h3 className="text-2xl font-bold text-foreground">
+        <div className="text-center mt-20 animate-fade-in">
+          <div className="space-y-6 p-10 md:p-12 rounded-2xl bg-card/70 backdrop-blur-md border-2 border-primary/30 shadow-[0_0_40px_-10px_hsl(var(--primary)/0.4)]">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground">
               Need a Custom Solution?
             </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Every business is unique. Let's discuss your specific needs and create a tailored automation strategy.
             </p>
+            <Button
+              size="lg"
+              className="btn-glow bg-primary hover:bg-primary-glow text-primary-foreground px-8"
+              onClick={() => {
+                const el = document.querySelector("#contact");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Let's Discuss Your Project
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
           </div>
         </div>
       </div>

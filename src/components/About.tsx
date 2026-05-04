@@ -26,12 +26,20 @@ const About = () => {
           >
             <div className="flex justify-center lg:justify-start mb-8">
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/15 to-accent/15 rounded-2xl blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-                <img 
-                  src={profilePhoto} 
-                  alt="Raul M. Cachola - Virtual Assistant & Automation Specialist"
-                  className="relative w-48 h-48 rounded-2xl object-cover border border-primary/10 shadow-lg"
-                />
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-accent/30 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative w-48 h-48 rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_40px_-10px_hsl(var(--primary)/0.5)] bg-background">
+                  <img
+                    src={profilePhoto}
+                    alt="Raul M. Cachola - Virtual Assistant & Automation Specialist"
+                    className="w-full h-full object-cover mix-blend-luminosity opacity-95"
+                  />
+                  {/* Dark overlay tint to blend with theme */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-transparent to-background/70" />
+                  {/* Vignette */}
+                  <div className="absolute inset-0 shadow-[inset_0_0_60px_20px_hsl(var(--background))] pointer-events-none" />
+                  {/* Gold tint wash */}
+                  <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
+                </div>
               </div>
             </div>
             <div className="space-y-4">

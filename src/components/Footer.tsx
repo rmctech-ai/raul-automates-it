@@ -1,4 +1,4 @@
-import { Heart, ArrowUp } from "lucide-react";
+import { ArrowUp, Linkedin, Facebook, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -42,7 +42,34 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="text-center md:text-right">
+            <div className="text-center md:text-right space-y-3">
+              <div className="flex justify-center md:justify-end gap-2">
+                <a
+                  href="https://linkedin.com/in/raulcachola"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="p-2 rounded-lg border border-primary/20 text-primary hover:bg-primary/10 transition-colors"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://www.facebook.com/pgenri.cachola/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="p-2 rounded-lg border border-primary/20 text-primary hover:bg-primary/10 transition-colors"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href="mailto:rapaulskie33@gmail.com"
+                  aria-label="Email"
+                  className="p-2 rounded-lg border border-primary/20 text-primary hover:bg-primary/10 transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
+              </div>
               <Button
                 variant="outline"
                 size="sm"
@@ -62,9 +89,7 @@ const Footer = () => {
               <span>© {currentYear} Raul M. Cachola. All rights reserved.</span>
             </div>
             <div className="flex items-center gap-1">
-              <span>Built with</span>
-              <Heart className="w-4 h-4 text-primary fill-current" />
-              <span>for automation excellence</span>
+              <span>Automating the future, one workflow at a time.</span>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Zap, Workflow, Settings, TrendingUp, Mail, Users, Clock, CheckCircle2, Bot, Video, Globe } from "lucide-react";
+import { Zap, Workflow, Settings, TrendingUp, Mail, Users, Clock, CheckCircle2, Bot, Video, Globe, Star, Sparkles } from "lucide-react";
 
 // Import workflow diagram images
 import zapierTypeformFlow from "@/assets/projects/zapier-typeform-flow.png";
@@ -43,10 +43,40 @@ interface Project {
   tags: string[];
   impact: string[];
   platform: "gohighlevel" | "zapier" | "make" | "n8n" | "cms_crm" | "video" | "email" | "other";
+  branded?: boolean;
+  accent?: string; // tailwind color class fragment, e.g. 'sky' or hsl
+  featured?: boolean;
 }
 
 const RealWorldProjects = () => {
   const projects: Project[] = [
+    // Featured n8n Projects
+    {
+      title: "AI Agent Appointment Setter with Retell Integration",
+      description: "Built an intelligent n8n workflow that uses AI agents to automatically notify customers about appointments via Retell voice technology, confirming bookings and reducing no-shows.",
+      image: "",
+      tags: ["n8n", "Retell", "AI Agent", "Voice"],
+      impact: [
+        "90% appointment confirmation rate",
+        "Reduced no-shows by 60%"
+      ],
+      platform: "n8n",
+      branded: true,
+      featured: true
+    },
+    {
+      title: "Lead Generation & Email Scraping to Google Sheets",
+      description: "Created an automated n8n workflow that scrapes email leads from various sources and organizes them into structured Google Sheets for sales teams.",
+      image: "",
+      tags: ["n8n", "Google Sheets", "Lead Generation"],
+      impact: [
+        "500+ leads per day automated",
+        "95% data accuracy"
+      ],
+      platform: "n8n",
+      branded: true,
+      featured: true
+    },
     // GoHighLevel Projects
     {
       title: "GoHighLevel CRM Campaign Setup",
@@ -58,7 +88,8 @@ const RealWorldProjects = () => {
         "Tracked email engagement and adjusted campaigns in real-time",
         "Increased email open rates by 60%"
       ],
-      platform: "gohighlevel"
+      platform: "gohighlevel",
+      featured: true
     },
     {
       title: "Two-Way SMS & API Integration",
@@ -132,7 +163,8 @@ const RealWorldProjects = () => {
         "Synced form responses across 3 platforms in real-time",
         "Eliminated 15 hours of manual data entry per week"
       ],
-      platform: "zapier"
+      platform: "zapier",
+      featured: true
     },
     {
       title: "Content Repurposing Engine",
@@ -308,7 +340,9 @@ const RealWorldProjects = () => {
         "Automated audience segmentation based on viewing behavior",
         "Increased video-to-lead conversion rate by 72%"
       ],
-      platform: "video"
+      platform: "video",
+      branded: true,
+      accent: "sky"
     },
 
     // Email Marketing
@@ -375,6 +409,32 @@ const RealWorldProjects = () => {
             Explore live implementations across multiple platforms showcasing practical automation solutions that drive real business impact.
           </p>
         </div>
+
+        {/* Featured Work */}
+        {projects.some(p => p.featured) && (
+          <div className="mb-16">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <Sparkles className="w-6 h-6 text-primary" />
+              <h3 className="text-3xl font-bold gradient-text">Featured Work</h3>
+              <Sparkles className="w-6 h-6 text-primary" />
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {projects.filter(p => p.featured).slice(0, 4).map((project, index) => (
+                <ProjectCard key={`feat-${index}`} project={project} index={index} />
+              ))}
+            </div>
+            <div className="relative my-16">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-border" />
+              </div>
+              <div className="relative flex justify-center">
+                <span className="bg-background px-6 py-2 text-sm font-bold tracking-widest uppercase text-primary border border-primary/30 rounded-full">
+                  All Projects
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Platform Tabs */}
         <Tabs defaultValue="all" className="w-full">
@@ -486,20 +546,76 @@ const RealWorldProjects = () => {
 };
 
 // Project Card Component
+const platformAccent: Record<Project["platform"], string> = {
+  gohighlevel: "from-primary/30 to-accent/20",
+  zapier: "from-orange-500/30 to-primary/20",
+  make: "from-fuchsia-500/30 to-primary/20",
+  n8n: "from-rose-500/30 to-primary/20",
+  cms_crm: "from-emerald-500/30 to-primary/20",
+  video: "from-sky-500/40 to-primary/20",
+  email: "from-amber-500/30 to-primary/20",
+  other: "from-primary/30 to-accent/20",
+};
+
+const platformIconMap = {
+  gohighlevel: Settings,
+  zapier: Zap,
+  make: Workflow,
+  n8n: TrendingUp,
+  cms_crm: Globe,
+  video: Video,
+  email: Mail,
+  other: Bot,
+} as const;
+
+const BrandedThumbnail = ({ project }: { project: Project }) => {
+  const Icon = platformIconMap[project.platform];
+  const accent = project.accent === "sky" ? "from-sky-500/50 to-sky-700/30" : platformAccent[project.platform];
+  return (
+    <div className={`relative w-full h-full bg-gradient-to-br ${accent} flex flex-col items-center justify-center p-6 text-center`}>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.15),transparent_60%)]" />
+      <div className="absolute inset-0 bg-background/40" />
+      <div className="relative z-10 space-y-3">
+        <div className="mx-auto w-12 h-12 rounded-xl bg-background/80 border border-primary/30 flex items-center justify-center shadow-[0_0_20px_-4px_hsl(var(--primary)/0.5)]">
+          <Icon className="w-6 h-6 text-primary" />
+        </div>
+        <div className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+          Automation Specialist
+        </div>
+        <div className="text-sm font-semibold text-foreground leading-snug px-2 line-clamp-2">
+          {project.title}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
-    <Card 
-      className="card-hover bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden animate-slide-up group"
+    <Card
+      className="card-hover bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden animate-slide-up group relative"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
+      {project.featured && (
+        <div className="absolute top-3 right-3 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold shadow-lg">
+          <Star className="w-3 h-3 fill-current" />
+          Featured
+        </div>
+      )}
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden bg-muted">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60" />
+        {project.branded || !project.image ? (
+          <BrandedThumbnail project={project} />
+        ) : (
+          <>
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60" />
+          </>
+        )}
       </div>
 
       <CardHeader>
