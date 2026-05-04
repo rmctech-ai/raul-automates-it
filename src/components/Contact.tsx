@@ -60,7 +60,7 @@ const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Connect with me",
-      action: () => window.open("https://www.linkedin.com/in/raulcachola/", "_blank"),
+      action: () => window.open("https://linkedin.com/in/raulcachola", "_blank"),
     },
     {
       icon: Facebook,
@@ -219,7 +219,7 @@ const Contact = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Monday - Friday</span>
-                    <span className="text-foreground">9:00 AM - 6:00 PM (PST)</span>
+                    <span className="text-foreground">9:00 AM - 6:00 PM (PHT)</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Response Time</span>
