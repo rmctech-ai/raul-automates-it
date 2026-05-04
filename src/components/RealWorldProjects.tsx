@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Zap, Workflow, Settings, TrendingUp, Mail, Users, Clock, CheckCircle2, Bot, Video, Globe } from "lucide-react";
+import { Zap, Workflow, Settings, TrendingUp, Mail, Users, Clock, CheckCircle2, Bot, Video, Globe, Star, Sparkles } from "lucide-react";
 
 // Import workflow diagram images
 import zapierTypeformFlow from "@/assets/projects/zapier-typeform-flow.png";
@@ -43,6 +43,9 @@ interface Project {
   tags: string[];
   impact: string[];
   platform: "gohighlevel" | "zapier" | "make" | "n8n" | "cms_crm" | "video" | "email" | "other";
+  branded?: boolean;
+  accent?: string; // tailwind color class fragment, e.g. 'sky' or hsl
+  featured?: boolean;
 }
 
 const RealWorldProjects = () => {
