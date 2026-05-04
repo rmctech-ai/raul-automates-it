@@ -50,6 +50,33 @@ interface Project {
 
 const RealWorldProjects = () => {
   const projects: Project[] = [
+    // Featured n8n Projects
+    {
+      title: "AI Agent Appointment Setter with Retell Integration",
+      description: "Built an intelligent n8n workflow that uses AI agents to automatically notify customers about appointments via Retell voice technology, confirming bookings and reducing no-shows.",
+      image: "",
+      tags: ["n8n", "Retell", "AI Agent", "Voice"],
+      impact: [
+        "90% appointment confirmation rate",
+        "Reduced no-shows by 60%"
+      ],
+      platform: "n8n",
+      branded: true,
+      featured: true
+    },
+    {
+      title: "Lead Generation & Email Scraping to Google Sheets",
+      description: "Created an automated n8n workflow that scrapes email leads from various sources and organizes them into structured Google Sheets for sales teams.",
+      image: "",
+      tags: ["n8n", "Google Sheets", "Lead Generation"],
+      impact: [
+        "500+ leads per day automated",
+        "95% data accuracy"
+      ],
+      platform: "n8n",
+      branded: true,
+      featured: true
+    },
     // GoHighLevel Projects
     {
       title: "GoHighLevel CRM Campaign Setup",
@@ -313,7 +340,9 @@ const RealWorldProjects = () => {
         "Automated audience segmentation based on viewing behavior",
         "Increased video-to-lead conversion rate by 72%"
       ],
-      platform: "video"
+      platform: "video",
+      branded: true,
+      accent: "sky"
     },
 
     // Email Marketing
