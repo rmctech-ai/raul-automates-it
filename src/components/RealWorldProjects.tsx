@@ -61,7 +61,8 @@ const RealWorldProjects = () => {
         "Tracked email engagement and adjusted campaigns in real-time",
         "Increased email open rates by 60%"
       ],
-      platform: "gohighlevel"
+      platform: "gohighlevel",
+      featured: true
     },
     {
       title: "Two-Way SMS & API Integration",
@@ -135,7 +136,8 @@ const RealWorldProjects = () => {
         "Synced form responses across 3 platforms in real-time",
         "Eliminated 15 hours of manual data entry per week"
       ],
-      platform: "zapier"
+      platform: "zapier",
+      featured: true
     },
     {
       title: "Content Repurposing Engine",
