@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
+import ClaudeProjects from "@/components/ClaudeProjects";
 import RealWorldProjects from "@/components/RealWorldProjects";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
@@ -24,6 +25,8 @@ const Index = () => {
         <About />
         <div className="cyber-divider" />
         <ToolsCarousel />
+        <div className="cyber-divider" />
+        <ClaudeProjects />
         <div className="cyber-divider" />
         <Portfolio />
         <div className="cyber-divider" />
