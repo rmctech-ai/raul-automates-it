@@ -26,8 +26,8 @@ const About = () => {
           >
             <div className="flex justify-center lg:justify-start mb-8">
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-accent/30 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative w-48 h-48 rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_40px_-10px_hsl(var(--primary)/0.5)] bg-background">
+                <div className="absolute -inset-2 rounded-full bg-[#F59E0B]/40 blur-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative w-48 h-48 rounded-full overflow-hidden bg-white ring-4 ring-[#F59E0B] shadow-[0_0_45px_-5px_#F59E0B]">
                   <img
                     src={profilePhoto}
                     alt="Raul M. Cachola - Virtual Assistant & Automation Specialist"
