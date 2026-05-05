@@ -31,14 +31,8 @@ const About = () => {
                   <img
                     src={profilePhoto}
                     alt="Raul M. Cachola - Virtual Assistant & Automation Specialist"
-                    className="w-full h-full object-cover mix-blend-luminosity opacity-95"
+                    className="w-full h-full object-cover"
                   />
-                  {/* Dark overlay tint to blend with theme */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-transparent to-background/70" />
-                  {/* Vignette */}
-                  <div className="absolute inset-0 shadow-[inset_0_0_60px_20px_hsl(var(--background))] pointer-events-none" />
-                  {/* Gold tint wash */}
-                  <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
                 </div>
               </div>
             </div>
