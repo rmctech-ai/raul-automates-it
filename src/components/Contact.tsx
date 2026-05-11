@@ -4,24 +4,44 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { 
-  Mail, 
-  Linkedin, 
-  Facebook, 
-  Download, 
-  Send, 
-  MapPin, 
+import {
+  Mail,
+  Linkedin,
+  Facebook,
+  Download,
+  Send,
   Clock,
   CheckCircle,
-  Briefcase 
+  Briefcase,
 } from "lucide-react";
+
+const BUSINESS_TYPES = [
+  "Real Estate",
+  "E-commerce",
+  "Coaching/Consulting",
+  "Marketing Agency",
+  "Law Firm",
+  "Medical/Dental",
+  "Other",
+];
+
+const WEBHOOK_URL = "https://n8n-rapaulskie.onrender.com/webhook/lead-intake";
 
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    business_type: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,19 +50,36 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    toast({
-      title: "Message Sent Successfully!",
-      description: "Thank you for reaching out. I'll get back to you within 24 hours.",
-    });
+      if (!res.ok) throw new Error("Request failed");
 
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+      toast({
+        title: "Message Sent!",
+        description: "Thank you! I'll get back to you within 24 hours.",
+      });
+
+      setFormData({ name: "", email: "", phone: "", business_type: "", message: "" });
+    } catch (err) {
+      toast({
+        title: "Submission Error",
+        description:
+          "Something went wrong. Please email me directly at rapaulskie33@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -72,7 +109,11 @@ const Contact = () => {
       icon: Briefcase,
       label: "Upwork",
       value: "Hire me",
-      action: () => window.open("https://www.upwork.com/freelancers/~01e9036c554823230c?mp_source=share", "_blank"),
+      action: () =>
+        window.open(
+          "https://www.upwork.com/freelancers/~01e9036c554823230c?mp_source=share",
+          "_blank"
+        ),
     },
   ];
 
@@ -86,7 +127,7 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto" />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to transform your business operations? Let's discuss your project and create 
+            Ready to transform your business operations? Let's discuss your project and create
             a customized automation solution that delivers results.
           </p>
         </div>
@@ -130,6 +171,45 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="+1 (555) 123-4567"
+                    required
+                    className="bg-background/50 border-border/50 focus:border-primary"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="business_type">Business Type</Label>
+                  <Select
+                    value={formData.business_type}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, business_type: value })
+                    }
+                    required
+                  >
+                    <SelectTrigger
+                      id="business_type"
+                      className="bg-background/50 border-border/50 focus:border-primary"
+                    >
+                      <SelectValue placeholder="Select your business type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {BUSINESS_TYPES.map((type) => (
+                        <SelectItem key={type} value={type}>
+                          {type}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="message">Project Details</Label>
                   <Textarea
                     id="message"
@@ -143,8 +223,8 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full btn-glow bg-primary hover:bg-primary-glow text-primary-foreground"
                   disabled={isSubmitting}
                 >
@@ -172,7 +252,7 @@ const Contact = () => {
                 <CardTitle className="text-xl text-foreground">Get in touch</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {contactInfo.map((info, index) => (
+                {contactInfo.map((info) => (
                   <button
                     key={info.label}
                     onClick={info.action}
@@ -230,13 +310,13 @@ const Contact = () => {
             </Card>
 
             {/* Resume Download */}
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="w-full btn-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/AI_RESUME.pdf';
-                link.download = 'Raul_Cachola_Resume.pdf';
+                const link = document.createElement("a");
+                link.href = "/AI_RESUME.pdf";
+                link.download = "Raul_Cachola_Resume.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
