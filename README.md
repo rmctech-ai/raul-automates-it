@@ -1,73 +1,47 @@
-# Welcome to your Lovable project
+# Raul M. Cachola — AI Automation Portfolio
 
-## Project info
+![Raul M. Cachola — AI Automation Specialist](public/og-image.png)
 
-**URL**: https://lovable.dev/projects/54fbb769-0fa3-4e9e-89b1-533b60246e70
+**Live site:** LIVE_SITE_URL
+**LinkedIn:** [linkedin.com/in/raulcachola](https://www.linkedin.com/in/raulcachola/) · **Upwork:** [profile](https://www.upwork.com/freelancers/~01e9036c554823230c)
 
-## How can I edit this code?
+I'm an AI Automation Specialist based in the Philippines. I build n8n and Zapier/Make workflows, GoHighLevel and HubSpot CRM pipelines, and AI agents that take repetitive work off a team's plate. Before automation I spent three years as a Technical Web Advisor at Concentrix (HostGator account), handling DNS, hosting, email and WordPress issues. That's where I learned to debug calmly and document everything.
 
-There are several ways of editing your application.
+This repo is the source code of my portfolio site.
 
-**Use Lovable**
+## Featured work
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/54fbb769-0fa3-4e9e-89b1-533b60246e70) and start prompting.
+| Project | What it does | Stack |
+|---|---|---|
+| **AI Appointment Setter** | AI voice agent calls customers to confirm bookings and cut no-shows | n8n, Retell, AI agent |
+| **Lead Capture + Instant Follow-up** | Captures form submissions and fires immediate SMS, email and task follow-ups for sales | GoHighLevel |
+| **Two-Way SMS & API Integration** | Automated SMS conversations and lead qualification, synced back into the CRM | n8n, GoHighLevel, Telekom API |
+| **HubSpot Contact Automation** | Enriches contacts, scores leads and triggers workflows from interaction data | n8n, HubSpot |
+| **E-Commerce AI Chat Assistant** | Chat agent that handles inquiries and bulk orders, applies discounts and keeps conversation memory | n8n, Google Gemini |
+| **Live contact form → n8n** | The contact form on this site posts to my own n8n webhook for lead intake | React, n8n (Render) |
 
-Changes made via Lovable will be committed automatically to this repo.
+The full list (25+ workflows with screenshots) is on the [live site](LIVE_SITE_URL).
 
-**Use your preferred IDE**
+I've also completed **8 NextWork Claude Code & AI projects**: Claude Code setup, skills, safety guardrails, an AI second brain, and prompt engineering for healthcare and research.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tools I work with
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Automation:** n8n · Zapier · Make
+**CRM:** GoHighLevel · HubSpot
+**AI:** Claude / Claude Code · OpenAI · Retell
+**Web & infra:** WordPress · DNS / hosting / email setup · Supabase · AWS (studying for Cloud Practitioner)
 
-Follow these steps:
+## About this site
+
+Built with React, TypeScript, Vite, Tailwind CSS and shadcn/ui, started in Lovable and customized from there. Run it locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+git clone https://github.com/rmctech-ai/raul-automates-it.git
+cd raul-automates-it
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Contact
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/54fbb769-0fa3-4e9e-89b1-533b60246e70) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Open to automation projects and internship opportunities. The fastest way to reach me is the contact form on the [live site](LIVE_SITE_URL) or [LinkedIn](https://www.linkedin.com/in/raulcachola/).
