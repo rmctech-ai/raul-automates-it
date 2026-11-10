@@ -2,6 +2,7 @@
 
 ![Raul M. Cachola — AI Automation Specialist](public/og-image.png)
 
+**🌐 Live site:** [raul-automates-it.lovable.app](https://raul-automates-it.lovable.app/)  
 **LinkedIn:** [linkedin.com/in/raulcachola](https://www.linkedin.com/in/raulcachola/) · **Upwork:** [profile](https://www.upwork.com/freelancers/~01e9036c554823230c)
 
 I'm an AI Automation Specialist based in the Philippines. I build workflows in n8n, Zapier and Make, set up GoHighLevel and HubSpot CRM pipelines, and build AI agents that take repetitive work off a team's plate. Before automation I spent three years as a Technical Web Advisor at Concentrix (HostGator account), handling DNS, hosting, email and WordPress issues. That's where I learned to debug calmly and document everything.
@@ -26,6 +27,9 @@ Watches a Google Sheet every 15 minutes and uses a router to send each update to
 ![Make Google Sheets to Slack router](src/assets/projects/make-slack-sheets.png)
 
 ### More projects
+
+Screenshots of 25+ workflows are on the [live site](https://raul-automates-it.lovable.app/#portfolio).
+
 
 | Project | What it does | Stack |
 |---|---|---|
@@ -57,4 +61,4 @@ npm run dev
 
 ## Contact
 
-I'm open to automation projects and internship opportunities. The fastest way to reach me is [LinkedIn](https://www.linkedin.com/in/raulcachola/).
+I'm open to automation projects and internship opportunities. The fastest way to reach me is the contact form on the [live site](https://raul-automates-it.lovable.app/#contact) or [LinkedIn](https://www.linkedin.com/in/raulcachola/).
