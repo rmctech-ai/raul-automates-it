@@ -5,7 +5,6 @@ import Portfolio from "@/components/Portfolio";
 import ClaudeProjects from "@/components/ClaudeProjects";
 import RealWorldProjects from "@/components/RealWorldProjects";
 import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ToolsCarousel from "@/components/ToolsCarousel";
@@ -33,8 +32,6 @@ const Index = () => {
         <RealWorldProjects />
         <div className="cyber-divider" />
         <Services />
-        <div className="cyber-divider" />
-        <Testimonials />
         <div className="cyber-divider" />
         <Contact />
       </main>

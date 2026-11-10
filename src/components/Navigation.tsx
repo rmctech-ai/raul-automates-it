@@ -23,7 +23,6 @@ const Navigation = () => {
     { name: "Claude Projects", href: "#claude-projects" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Services", href: "#services" },
-    { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
     { name: "AI Automation Lab", href: "/ai-lab", isRoute: true },
   ];

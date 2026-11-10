@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# Raul M. Cachola — AI Automation Portfolio
 
-## Project info
+![Raul M. Cachola — AI Automation Specialist](public/og-image.png)
 
-**URL**: https://lovable.dev/projects/54fbb769-0fa3-4e9e-89b1-533b60246e70
+**LinkedIn:** [linkedin.com/in/raulcachola](https://www.linkedin.com/in/raulcachola/) · **Upwork:** [profile](https://www.upwork.com/freelancers/~01e9036c554823230c)
 
-## How can I edit this code?
+I'm an AI Automation Specialist based in the Philippines. I build workflows in n8n, Zapier and Make, set up GoHighLevel and HubSpot CRM pipelines, and build AI agents that take repetitive work off a team's plate. Before automation I spent three years as a Technical Web Advisor at Concentrix (HostGator account), handling DNS, hosting, email and WordPress issues. That's where I learned to debug calmly and document everything.
 
-There are several ways of editing your application.
+This repo is the source code of my portfolio website.
 
-**Use Lovable**
+## Workflows I've built
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/54fbb769-0fa3-4e9e-89b1-533b60246e70) and start prompting.
+### E-commerce AI chat assistant (n8n + Google Gemini)
+A chat agent that answers customer questions, takes bulk orders, applies the right discount and remembers the conversation. Below, it's handling a 500-notebook order and applying the 25% bulk discount.
 
-Changes made via Lovable will be committed automatically to this repo.
+![n8n e-commerce AI chat assistant](src/assets/projects/n8n-ecommerce-chat.png)
 
-**Use your preferred IDE**
+### Lead action automation (Zapier, 30 steps)
+Routes each lead down one of five paths (Ready to Start, No Response, Quoted, Approved, Paid and Close). Each path sends the right Gmail follow-up, and the Ready to Start path also creates the Google Drive folder and Asana tasks for the new project.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+![Zapier multi-path lead automation](src/assets/projects/zapier-leads-detailed.png)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Team notifications from Google Sheets (Make)
+Watches a Google Sheet every 15 minutes and uses a router to send each update to the right Slack channel.
 
-Follow these steps:
+![Make Google Sheets to Slack router](src/assets/projects/make-slack-sheets.png)
+
+### More projects
+
+| Project | What it does | Stack |
+|---|---|---|
+| **AI appointment setter** | AI voice agent calls customers to confirm bookings and cut no-shows | n8n, Retell |
+| **Two-way SMS integration** | Automated SMS conversations and lead qualification, synced back into the CRM | n8n, GoHighLevel, Telekom API |
+| **Lead capture + instant follow-up** | Captures form submissions and fires immediate SMS, email and task follow-ups | GoHighLevel |
+| **HubSpot contact automation** | Enriches contacts, scores leads and triggers workflows from interaction data | n8n, HubSpot |
+| **This site's contact form** | Posts every enquiry to my own n8n webhook for lead intake | React, n8n |
+
+I've also completed **8 NextWork projects on Claude Code and AI**, including Claude Code setup, skills, safety guardrails, an AI second brain, and prompt engineering for healthcare and research.
+
+## Tools I work with
+
+- **Automation:** n8n · Zapier · Make
+- **CRM:** GoHighLevel · HubSpot
+- **AI:** Claude / Claude Code · Google Gemini · Retell
+- **Web & infra:** WordPress · DNS, hosting & email setup · Supabase · AWS (studying for Cloud Practitioner)
+
+## About this site
+
+Built with React, TypeScript, Vite, Tailwind CSS and shadcn/ui. I started it in Lovable and customized it from there. To run it locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+git clone https://github.com/rmctech-ai/raul-automates-it.git
+cd raul-automates-it
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Contact
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/54fbb769-0fa3-4e9e-89b1-533b60246e70) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+I'm open to automation projects and internship opportunities. The fastest way to reach me is [LinkedIn](https://www.linkedin.com/in/raulcachola/).
